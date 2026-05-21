@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-sql-firebird-janv-2006/sql-lmtqdm.html">
+      
+      
+        <link rel="prev" href="llqt-byn-ljdwl.html">
+      
+      
+        <link rel="next" href="dr-lwwl-lmtzmn-l-lbynt.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>6. SQL المتقدم - مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-sql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" class="md-header__button md-logo" aria-label="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. SQL المتقدم
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-sql-firebird-janv-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" class="md-nav__button md-logo" aria-label="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-sql-firebird-janv-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dlyl-firebird.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. دليل Firebird
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-l-sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. مقدمة إلى لغة SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyrt-sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تعبيرات SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="llqt-byn-ljdwl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. العلاقات بين الجداول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. SQL المتقدم
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sql-lmtqdm.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. SQL المتقدم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. مقدمة
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1. مقدمة">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1. جدول CLIENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2. جدول &quot;المنتجات&quot;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3. جدول ORDERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.4. جدول DETAILS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. جملة SELECT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. جملة SELECT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1. صيغة الاستعلام متعدد الجداول
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2. الربط الذاتي
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3. الربط الخارجي
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#624" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.4. الاستعلامات المتداخلة
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#625" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.5. الاستعلامات المتداخلة
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#626-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.6. معايير كتابة جملة SELECT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. امتدادات بناء الجملة
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dr-lwwl-lmtzmn-l-lbynt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. إدارة الوصول المتزامن إلى البيانات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tthbyt-wstkhdm-brnmj-tshyl-odbc-l-firebird.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تثبيت واستخدام برنامج تشغيل ODBC لـ [Firebird]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="6-sql">6. <span style="color: #365f91"><bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المتقدم</span></h1>
+<h2 id="61">6.1. <span style="color: #4f81bd">مقدمة</span></h2>
+<p>في هذا الفصل، نقدم</p>
+<ul>
+  <li>صيغ إضافية لعبارة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> تجعلها أمر استعلام قويًا للغاية، خاصةً لاستعلام عدة جداول في آن واحد.
+  </li>
+  <li>صيغ موسعة للأوامر التي تمت تغطيتها بالفعل
+  </li>
+</ul>
+
+<p>لتوضيح الطلبات المختلفة، سنعمل مع الجداول التالية المستخدمة لإدارة الطلبات في شركة توزيع كتب صغيرة إلى متوسطة الحجم:</p>
+<h3 id="611-clients">6.1.1. <span style="color: #4f81bd">جدول <bdi dir="ltr" class="odt-ltr-term">CLIENTS</bdi></span></h3>
+<p>يخزن معلومات عن عملاء الشركة:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000106000000CCCC752293.png" width="210" height="163" style="display:inline-block; margin:4px;width:5.547cm;height:4.32cm;" class="odt-zoomable" data-zoom-src="images/1000000000000106000000CCCC752293.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><img src="images/10000000000002EA000000BDDB8C27BC.png" width="522" height="132" style="width:13.818cm;height:3.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002EA000000BDDB8C27BC.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>المعرف
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معرف فريد للعميل - المفتاح الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>الاسم
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اسم العميل</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>الحالة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">I</bdi>=فرد، <bdi dir="ltr" class="odt-ltr-term">E</bdi>=شركة، <bdi dir="ltr" class="odt-ltr-term">A</bdi>=حكومة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>الاسم الأول
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الاسم الأول للفرد</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>الاتصال
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اسم الشخص المسؤول عن الاتصال في مقر العميل (في حالة شركة أو وكالة حكومية)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>الشارع
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان العميل - الشارع</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>المدينة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">المدينة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>الرمز البريدي
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الرمز البريدي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>الهاتف
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الهاتف</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>منذ
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">منذ متى وأنت عميل لدينا؟</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>المدين
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">نعم (<bdi dir="ltr" class="odt-ltr-term">Y</bdi>) إذا كان العميل مديناً للشركة، ولا (<bdi dir="ltr" class="odt-ltr-term">N</bdi>) في الحالات الأخرى.</div></td></tr></table>
+
+<h3 id="612">6.1.2. <span style="color: #4f81bd">جدول &quot;المنتجات&quot;</span></h3>
+<p>يخزن معلومات عن المنتجات المباعة، وهي في هذه الحالة الكتب. وهيكل الجدول كما يلي:</p>
+<p><img src="images/100000000000012D00000111F02EADDB.png" width="241" height="218" style="width:6.368cm;height:5.777cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012D00000111F02EADDB.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ISBN
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معرف فريد للكتاب (<bdi dir="ltr" class="odt-ltr-term">ISBN</bdi> = الرقم الدولي الموحد للكتاب) - المفتاح الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>العنوان
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان الكتاب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>رمز_الناشر
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الرمز الذي يحدد الناشر بشكل فريد</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>المؤلف
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اسم المؤلف</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ملخص
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ملخص الكتاب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>الكمية
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الكمية المباعة هذا العام</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>QTEANPREC
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الكمية المباعة في العام السابق</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>آخر عملية بيع
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تاريخ آخر عملية بيع</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>QTERECUE
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">كمية آخر تسليم</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>LASTDELIVERY
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تاريخ آخر تسليم</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>سعر البيع
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">سعر البيع</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>التكلفة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تكلفة الشراء</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>MINCDE
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الحد الأدنى لكمية الطلب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>MINSTOCK
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الحد الأدنى لمستوى المخزون</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>QTESTOCK
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الكمية المتوفرة</div></td></tr></table>
+
+<p>قد يكون محتواها كما يلي:</p>
+<p><img src="images/10000000000003DF0000007812E326FD.png" width="640" height="77" style="width:16.933cm;height:2.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003DF0000007812E326FD.png" /></p>
+<h3 id="613-orders">6.1.3. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">جدول <bdi dir="ltr" class="odt-ltr-term">ORDERS</bdi></span></strong></span></h3>
+<p>يخزن معلومات حول الطلبات التي قدمها العملاء. هيكله كما يلي:</p>
+<p><img src="images/10000000000001410000005798884DB4.png" width="257" height="70" style="width:6.787cm;height:1.84cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001410000005798884DB4.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>NOCMD
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معرف فريد للطلب - المفتاح الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>CUSTID
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معرف العميل لهذا الطلب - مفتاح خارجي - مرجع إلى <bdi dir="ltr" class="odt-ltr-term">CUSTOMERS</bdi>(<bdi dir="ltr" class="odt-ltr-term">ID</bdi>)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ORDER_DATE
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تاريخ إدخال هذا الطلب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>CANCELED
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">O</bdi> (نعم) إذا تم إلغاء الطلب و <bdi dir="ltr" class="odt-ltr-term">N</bdi> (لا) في الحالات الأخرى.</div></td></tr></table>
+
+<p><img src="images/100000000000010D000000992E8A3DB3.png" width="215" height="122" style="width:5.689cm;height:3.237cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010D000000992E8A3DB3.png" /></p>
+<h3 id="614-details">6.1.4. <span style="color: #4f81bd">جدول <bdi dir="ltr" class="odt-ltr-term">DETAILS</bdi></span></h3>
+<p>يحتوي على تفاصيل الطلب، أي عناوين وكميات الكتب المطلوبة. وهيكل الجدول كما يلي:</p>
+<p><img src="images/100000000000011F00000058C4AC6156.png" width="229" height="70" style="width:6.068cm;height:1.861cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011F00000058C4AC6156.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>NOCMD
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رقم الطلب - مفتاح خارجي يشير إلى عمود <bdi dir="ltr" class="odt-ltr-term">NOCMD</bdi> في جدول <bdi dir="ltr" class="odt-ltr-term">COMMANDES</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ISBN
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رقم الكتاب المطلوب - مفتاح خارجي يشير إلى عمود <bdi dir="ltr" class="odt-ltr-term">ISBN</bdi> في جدول <bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>QTE
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الكمية المطلوبة</div></td></tr></table>
+
+<p>قد يكون محتواها كما يلي:</p>
+<p><img src="images/10000000000000DB000000F0554D0F9F.png" width="175" height="192" style="width:4.639cm;height:5.084cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DB000000F0554D0F9F.png" /></p>
+<p>في الأعلى، نرى أن الطلب رقم 3 (<bdi dir="ltr" class="odt-ltr-term">NOCMD</bdi>) يتضمن ثلاثة كتب. وهذا يعني أن العميل طلب ثلاثة كتب في نفس الوقت. يمكن العثور على سجلات هذا العميل في جدول [<bdi dir="ltr" class="odt-ltr-term">ORDERS</bdi>]، حيث نرى أن الطلب رقم 3 تم تقديمه من قبل العميل رقم 5. ويخبرنا جدول [<bdi dir="ltr" class="odt-ltr-term">CUSTOMERS</bdi>] أن العميل رقم 5 هو شركة <bdi dir="ltr" class="odt-ltr-term">NetLogos</bdi> في <bdi dir="ltr" class="odt-ltr-term">Segré.</bdi></p>
+<h2 id="62-select">6.2. <span style="color: #4f81bd">جملة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi></span></h2>
+<p>نهدف هنا إلى تعميق فهمنا لعبارة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> من خلال تقديم صيغ جديدة لها.</p>
+<h3 id="621">6.2.1. <span style="color: #4f81bd">صيغة الاستعلام متعدد الجداول</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>الصيغة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> </b><i>العمود1، العمود2، ...</i></div><div style="margin:0 0 0.5em 0"><b>من </b><i>الجدول1، الجدول2، ...، الجدولp</i></div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b><i>الشرط</i></div><div style="margin:0 0 0.5em 0"><b>ترتيب حسب </b>...</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>الإجراء
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الجديد هنا هو أن الأعمدة <i><bdi dir="ltr" class="odt-ltr-term">column1</bdi>، <bdi dir="ltr" class="odt-ltr-term">column2</bdi>، ... </i>تأتي من جداول متعددة <i><bdi dir="ltr" class="odt-ltr-term">table1</bdi>، <bdi dir="ltr" class="odt-ltr-term">table2</bdi></i>، ... إذا كان هناك جدولان يحتويان على أعمدة تحمل نفس الاسم، يتم حل الغموض باستخدام الترميز <i><bdi dir="ltr" class="odt-ltr-term">tablei.columnj</bdi></i>. يمكن أن تنطبق <i>الشرط </i>على أعمدة من جداول مختلفة.</div></td></tr></table>
+
+<p>كيف يعمل</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتم إنشاء المنتج الديكارتي <i>للجداول <bdi dir="ltr" class="odt-ltr-term">table1</bdi> و <bdi dir="ltr" class="odt-ltr-term">table2</bdi> و... و <bdi dir="ltr" class="odt-ltr-term">tablep</bdi></i>. إذا كان<i> n_i </i>هو عدد الصفوف في <i>الجدول </i><bdi dir="ltr" class="odt-ltr-term">table_i</bdi>، فإن الجدول الناتج يحتوي على <i>n₁*n₂*...*n_p </i>صفًا تحتوي على جميع الأعمدة من الجداول المختلفة.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتم تطبيق <i>شرط</i><b> <bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b>على هذا الجدول. وبذلك يتم إنشاء جدول جديد</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>3
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتم فرز هذا الجدول وفقًا للطريقة المحددة في <b><bdi dir="ltr" class="odt-ltr-term">ORDER</bdi></b>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>4
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتم عرض الأعمدة المحددة بعد <b><bdi dir="ltr" class="odt-ltr-term">SELECT</bdi></b>.</div></td></tr></table>
+
+<p><strong>أمثلة</strong></p>
+<p>سنستخدم الجداول التي عرضناها سابقًا. نريد الاطلاع على تفاصيل الطلبات التي تم تقديمها بعد 25 سبتمبر:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="p">,</span><span class="n">isbn</span><span class="p">,</span><span class="n">qte</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="p">,</span><span class="n">details</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="o">&gt;</span><span class="s1">&#39;25-sep-91&#39;</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span>
+</code></pre></div>
+<p><img src="images/10000000000000BB000000468E8D5B3D.png" width="150" height="56" style="width:3.958cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000BB000000468E8D5B3D.png" /></p>
+<p>لاحظ أنه بعد <bdi dir="ltr" class="odt-ltr-term">FROM</bdi>، نقوم بإدراج أسماء جميع الجداول التي نشير إلى أعمدةها. في المثال السابق، تنتمي جميع الأعمدة المحددة إلى جدول <bdi dir="ltr" class="odt-ltr-term">DETAILS.</bdi> ومع ذلك، تشير الشرط إلى جدول <bdi dir="ltr" class="odt-ltr-term">ORDERS.</bdi> ومن هنا تأتي الحاجة إلى إدراج هذا الأخير بعد <bdi dir="ltr" class="odt-ltr-term">FROM.</bdi> غالبًا ما يُطلق على العملية التي تختبر المساواة بين الأعمدة في جدولين مختلفين اسم <bdi dir="ltr" class="odt-ltr-term">equijoin.</bdi></p>
+<p>كان من الممكن أيضًا كتابة استعلام <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> على النحو التالي:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="p">,</span><span class="n">isbn</span><span class="p">,</span><span class="n">qte</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">details</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="o">&gt;</span><span class="s1">&#39;25-sep-91&#39;</span>
+</code></pre></div>
+<p>لنواصل أمثلةنا. نريد الحصول على نفس النتيجة السابقة ولكن مع عنوان الكتاب المطلوب، بدلاً من رقم <bdi dir="ltr" class="odt-ltr-term">ISBN</bdi> الخاص به:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span><span class="p">,</span><span class="w"> </span><span class="n">articles</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">qte</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="p">,</span><span class="n">articles</span><span class="p">,</span><span class="n">details</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="o">&gt;</span><span class="s1">&#39;25-sep-91&#39;</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">articles</span><span class="p">.</span><span class="n">isbn</span>
+</code></pre></div>
+<p><img src="images/1000000000000100000000469B800507.png" width="205" height="56" style="width:5.419cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000100000000469B800507.png" /></p>
+<p>يتم الحصول على نفس النتيجة باستخدام استعلام <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالي، الذي يكون أقل قابلية للقراءة:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="p">,</span><span class="n">articles</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="n">details</span><span class="p">.</span><span class="n">qte</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">details</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">    </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">commandes</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="k">on</span><span class="w">  </span><span class="n">details</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">articles</span><span class="p">.</span><span class="n">isbn</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="o">&gt;</span><span class="s1">&#39;25-sep-91&#39;</span>
+</code></pre></div>
+<p>فيما سبق، يتم تنفيذ عمليتي ربط داخلي مع جدول [<bdi dir="ltr" class="odt-ltr-term">DETAILS</bdi>]:</p>
+<ul>
+  <li>أحدهما مع جدول [<bdi dir="ltr" class="odt-ltr-term">ORDERS</bdi>] للوصول إلى تاريخ طلب كتاب
+  </li>
+  <li>والآخر مع جدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>] للوصول إلى عنوان الكتاب المطلوب
+  </li>
+</ul>
+
+<p>نريد أيضًا اسم العميل الذي قدم الطلب:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span><span class="p">,</span><span class="w"> </span><span class="n">articles</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">qte</span><span class="w"> </span><span class="p">,</span><span class="n">clients</span><span class="p">.</span><span class="n">nom</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="p">,</span><span class="n">details</span><span class="p">,</span><span class="n">articles</span><span class="p">,</span><span class="n">clients</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="o">&gt;</span><span class="s1">&#39;25-sep-91&#39;</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">articles</span><span class="p">.</span><span class="n">isbn</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span><span class="o">=</span><span class="n">clients</span><span class="p">.</span><span class="n">id</span>
+</code></pre></div>
+<p><img src="images/1000000000000144000000468E42B5D0.png" width="259" height="56" style="width:6.858cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000144000000468E42B5D0.png" /></p>
+<p>نريد أيضًا تواريخ الطلبات وعرض هذه التواريخ بترتيب تنازلي:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span><span class="p">,</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="p">,</span><span class="w"> </span><span class="n">articles</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">qte</span><span class="w"> </span><span class="p">,</span><span class="n">clients</span><span class="p">.</span><span class="n">nom</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="p">,</span><span class="n">details</span><span class="p">,</span><span class="n">articles</span><span class="p">,</span><span class="n">clients</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="o">&gt;</span><span class="s1">&#39;25-sep-91&#39;</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">nocmd</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">articles</span><span class="p">.</span><span class="n">isbn</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span><span class="o">=</span><span class="n">clients</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="w">    </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="w"> </span><span class="n">descending</span>
+</code></pre></div>
+<p><img src="images/10000000000001AA00000045E498CFA3.png" width="341" height="55" style="width:9.019cm;height:1.461cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA00000045E498CFA3.png" /></p>
+<p>فيما يلي بعض القواعد التي يجب اتباعها عند إنشاء عمليات الربط:</p>
+<ol>
+  <li>بعد <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>، قم بإدراج الأعمدة التي تريد عرضها. إذا كان العمود موجودًا في جداول متعددة، فضع اسم الجدول قبله.
+  </li>
+  <li>بعد <bdi dir="ltr" class="odt-ltr-term">FROM</bdi>، قم بإدراج جميع الجداول التي سيتم الاستعلام عنها بواسطة جملة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>، أي الجداول التي تحتوي على الأعمدة المدرجة بعد <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> و <bdi dir="ltr" class="odt-ltr-term">WHERE.</bdi>
+  </li>
+</ol>
+<h3 id="622">6.2.2. <span style="color: #4f81bd">الربط الذاتي</span></h3>
+<p>نريد العثور على الكتب التي يزيد سعر بيعها بالتجزئة عن سعر كتاب &quot;<bdi dir="ltr" class="odt-ltr-term">Using SQL</bdi>&quot;:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">titre</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">articles</span><span class="w"> </span><span class="n">b</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">titre</span><span class="o">=</span><span class="s1">&#39;Using SQL&#39;</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">prixvente</span><span class="o">&gt;</span><span class="n">b</span><span class="p">.</span><span class="n">prixvente</span>
+</code></pre></div>
+<p><img src="images/10000000000000990000003514713338.png" width="122" height="42" style="width:3.239cm;height:1.122cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000990000003514713338.png" /></p>
+<p>الجدولان المستخدمان في عملية الربط متطابقان هنا: جدول <em><bdi dir="ltr" class="odt-ltr-term">articles</bdi></em>. ولتمييزهما، نُطلق عليهما أسماء مستعارة: <em><bdi dir="ltr" class="odt-ltr-term">articles a</bdi> و <bdi dir="ltr" class="odt-ltr-term">articles b.</bdi></em> الاسم المستعار للجدول الأول هو <em>a</em>، واسم المستعار للجدول الثاني هو <em>b</em>. ويمكن استخدام هذه الصيغة حتى لو كانت الجداول مختلفة. وعند استخدام اسم مستعار، يجب استخدامه في جميع أجزاء جملة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> بدلاً من الجدول الذي يشير إليه.</p>
+<h3 id="623">6.2.3. <span style="color: #4f81bd">الربط الخارجي</span></h3>
+<p>نريد تحديد العملاء الذين أجروا عملية شراء في سبتمبر، مع تاريخ الطلب. يتم عرض العملاء الآخرين بدون هذا التاريخ:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">clients</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">clients</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">    </span><span class="k">left</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">commandes</span><span class="w">  </span><span class="k">on</span><span class="w"> </span><span class="n">clients</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">datecmd</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">&#39;01-sep-91&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">&#39;30-sep-91&#39;</span>
+</code></pre></div>
+<p><img src="images/10000000000000C60000009D26D9D567.png" width="158" height="125" style="width:4.187cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C60000009D26D9D567.png" /></p>
+<p>من المفاجئ هنا أننا لا نحصل على النتيجة الصحيحة. كان من المفترض أن نحصل على جميع العملاء الموجودين في جدول [<bdi dir="ltr" class="odt-ltr-term">CLIENTS</bdi>]، ولكن هذا لم يحدث. عندما نفكر في كيفية عمل الارتباط الخارجي، ندرك أن العملاء الذين لم يقوموا بأي عملية شراء قد تمت مطابقتهم مع صف فارغ في جدول <bdi dir="ltr" class="odt-ltr-term">ORDERS</bdi> وبالتالي مع تاريخ فارغ (قيمة <bdi dir="ltr" class="odt-ltr-term">NULL</bdi> في مصطلحات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>). هذا التاريخ لا يفي بالشرط المحدد للتاريخ، لذلك لا يتم عرض العميل المقابل. دعونا نجرب شيئًا آخر:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">clients</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">clients</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">    </span><span class="k">left</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">commandes</span><span class="w">  </span><span class="k">on</span><span class="w"> </span><span class="n">clients</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">&#39;01-sep-91&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">&#39;30-sep-91&#39;</span><span class="p">)</span>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="w">        </span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="n">commandes</span><span class="p">.</span><span class="n">datecmd</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="images/10000000000000C6000000F07104897A.png" width="158" height="192" style="width:4.187cm;height:5.075cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C6000000F07104897A.png" /></p>
+<p>هذه المرة، نحصل على الإجابة الصحيحة لسؤالنا.</p>
+<h3 id="624">6.2.4. <span style="color: #4f81bd">الاستعلامات المتداخلة</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>بناء الجملة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> </b><i>عمود[أعمدة] </i><bdi dir="ltr" class="odt-ltr-term">FROM</bdi> <i>جدول[جداول]</i></div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b><i>تعبير عامل الاستعلام</i></div><div style="margin:0 0 0.5em 0"><b>ترتيب حسب </b>...</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>كيفية العمل
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>الاستعلام </i>هو عبارة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> التي تُرجع مجموعة من 0 أو 1 أو أكثر من القيم. ثم لدينا شرط <b><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b>من النوع</div><div style="margin:0 0 0.5em 0">    <b>التعبير المشغل (<bdi dir="ltr" class="odt-ltr-term">val1</bdi>، <bdi dir="ltr" class="odt-ltr-term">val2</bdi>، ...، <bdi dir="ltr" class="odt-ltr-term">vali</bdi>)</b></div><div style="margin:0 0 0.5em 0">يجب أن يكون <i>التعبير </i>و <i><bdi dir="ltr" class="odt-ltr-term">vali</bdi> </i>من نفس النوع. إذا أعاد الاستعلام قيمة واحدة، فإننا نختزل الشرط إلى النوع</div><div style="margin:0 0 0.5em 0">    <b>التعبير المشغل القيمة</b></div><div style="margin:0 0 0.5em 0">التي نعرفها جيدًا. إذا أعاد الاستعلام قائمة من القيم، فيمكننا استخدام العوامل التالية:</div><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>IN
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0"><i>التعبير </i><b><bdi dir="ltr" class="odt-ltr-term">IN</bdi> </b><i>(<bdi dir="ltr" class="odt-ltr-term">val1</bdi>, <bdi dir="ltr" class="odt-ltr-term">val2</bdi>, ..., <bdi dir="ltr" class="odt-ltr-term">vali</bdi>): </i><b>صحيح </b>إذا كان<i> التعبير </i>يساوي أحد العناصر في القائمة <i><bdi dir="ltr" class="odt-ltr-term">vali</bdi></i>.</div><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>NOT IN
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0">عكس <b><bdi dir="ltr" class="odt-ltr-term">IN</bdi></b></div><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>أي
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0">يجب أن يسبقها =، !=، &gt;، &gt;=، &lt;، &lt;=</div><div style="margin:0 0 0.5em 0"><i>التعبير </i>&gt;= <b><bdi dir="ltr" class="odt-ltr-term">ANY</bdi> </b><i>(<bdi dir="ltr" class="odt-ltr-term">val1</bdi>, <bdi dir="ltr" class="odt-ltr-term">val2</bdi>, .., <bdi dir="ltr" class="odt-ltr-term">valn</bdi>): </i>صحيح إذا كان<i> التعبير </i>&gt;= إحدى القيم <i><bdi dir="ltr" class="odt-ltr-term">vali</bdi> </i>في القائمة</div><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>ALL
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0">يجب أن يسبقه =، !=، &gt;، &gt;=، &lt;، &lt;=</div><div style="margin:0 0 0.5em 0"><i>التعبير </i>&gt;= <b><bdi dir="ltr" class="odt-ltr-term">ALL</bdi> </b><i>(القيمة 1، القيمة 2، ..، القيمة n)</i>: <b>صحيح </b>إذا كان التعبير &gt;= جميع القيم الصالحة في القائمة</div><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>EXISTS
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0">الاستعلام: صحيح إذا أعاد<i> الاستعلام </i>صفًا واحدًا على الأقل.</div></td></tr></table>
+
+<p><strong>أمثلة</strong></p>
+<p>لنعد إلى السؤال الذي تم حله بالفعل باستخدام عملية ربط متساوي: اعرض العناوين التي يزيد سعر بيعها عن سعر كتاب &quot;<bdi dir="ltr" class="odt-ltr-term">Using SQL</bdi>&quot;.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">prixvente</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">prixvente</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">titre</span><span class="o">=</span><span class="s1">&#39;Using SQL&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="images/10000000000000B9000000361BEA796C.png" width="148" height="43" style="width:3.918cm;height:1.145cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000B9000000361BEA796C.png" /></p>
+<p>يبدو هذا الحل أكثر بديهية من الـ <bdi dir="ltr" class="odt-ltr-term">equijoin.</bdi> نقوم بتصفية أولية باستخدام <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>، ثم تصفية ثانية على المجموعة الناتجة. يمكننا إجراء عدة تصفيات متتالية بهذه الطريقة.</p>
+<p>نريد العثور على العناوين التي يزيد سعر بيعها عن متوسط سعر البيع:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">prixvente</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">prixvente</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="images/10000000000000B7000000455DE2D15A.png" width="146" height="55" style="width:3.868cm;height:1.459cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000B7000000455DE2D15A.png" /></p>
+<p>من هم العملاء الذين طلبوا العناوين التي أعادها الاستعلام السابق؟</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">idcli</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">COMMANDES</span><span class="p">,</span><span class="n">DETAILS</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">DETAILS</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="k">in</span>
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="w">    </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">isbn</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prixvente</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="w">        </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">prixvente</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">))</span>
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">COMMANDES</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">DETAILS</span><span class="p">.</span><span class="n">nocmd</span>
+</code></pre></div>
+<p><img src="images/100000000000004200000045E07D4FCA.png" width="53" height="55" style="width:1.399cm;height:1.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000004200000045E07D4FCA.png" /></p>
+<p><strong>شرح</strong></p>
+<ol>
+  <li>نختار من جدول <bdi dir="ltr" class="odt-ltr-term">DETAILS</bdi> رموز <bdi dir="ltr" class="odt-ltr-term">ISBN</bdi> الموجودة بين الكتب التي يزيد سعرها عن متوسط سعر الكتاب.
+  </li>
+  <li>في الصفوف المحددة في الخطوة السابقة، لا يوجد معرف العميل (<bdi dir="ltr" class="odt-ltr-term">IDCLI</bdi>). يمكن العثور عليه في جدول <bdi dir="ltr" class="odt-ltr-term">ORDERS.</bdi> يتم إنشاء الارتباط بين الجدولين عبر رقم الطلب (<bdi dir="ltr" class="odt-ltr-term">NOCMD</bdi>)، ومن ثم شرط الربط <bdi dir="ltr" class="odt-ltr-term">ORDERS.nocmd</bdi>=<bdi dir="ltr" class="odt-ltr-term">DETAILS.nocmd.</bdi>
+  </li>
+  <li>قد يكون عميل واحد قد اشترى أحد الكتب ذات الصلة عدة مرات، وفي هذه الحالة سيظهر رمز <bdi dir="ltr" class="odt-ltr-term">IDCLI</bdi> الخاص به عدة مرات. لتجنب ذلك، نضع الكلمة الرئيسية <bdi dir="ltr" class="odt-ltr-term">DISTINCT</bdi> بعد <bdi dir="ltr" class="odt-ltr-term">SELECT.</bdi> تعمل <bdi dir="ltr" class="odt-ltr-term">DISTINCT</bdi> عمومًا على إزالة التكرارات من الصفوف التي يتم إرجاعها بواسطة استعلام <bdi dir="ltr" class="odt-ltr-term">SELECT.</bdi>
+  </li>
+  <li>لاسترداد اسم العميل، سنحتاج إلى إجراء ربط إضافي بين الجدولين <bdi dir="ltr" class="odt-ltr-term">ORDERS</bdi> و <bdi dir="ltr" class="odt-ltr-term">CUSTOMERS</bdi>، كما هو موضح في الاستعلام التالي.
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">CLIENTS</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">COMMANDES</span><span class="p">,</span><span class="n">DETAILS</span><span class="p">,</span><span class="n">CLIENTS</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">DETAILS</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="k">in</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">    </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">isbn</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prixvente</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">        </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">prixvente</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">))</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">COMMANDES</span><span class="p">.</span><span class="n">nocmd</span><span class="o">=</span><span class="n">DETAILS</span><span class="p">.</span><span class="n">nocmd</span>
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">COMMANDES</span><span class="p">.</span><span class="n">IDCLI</span><span class="o">=</span><span class="n">CLIENTS</span><span class="p">.</span><span class="n">ID</span>
+</code></pre></div>
+<p><img src="images/100000000000006300000045EAF6B60A.png" width="79" height="55" style="width:2.099cm;height:1.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000006300000045EAF6B60A.png" /></p>
+<p>ابحث عن العملاء الذين لم يقدموا أي طلب منذ 24 سبتمبر:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">CLIENTS</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">clients</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="w">    </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">datecmd</span><span class="o">&gt;=</span><span class="s1">&#39;24-sep-91&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="images/1000000000000062000000697F66C567.png" width="78" height="84" style="width:2.069cm;height:2.217cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000062000000697F66C567.png" /></p>
+<p>لقد رأينا أنه يمكن تصفية الصفوف بطرق أخرى غير استخدام جملة <bdi dir="ltr" class="odt-ltr-term">WHERE:</bdi> وذلك باستخدام جملة <bdi dir="ltr" class="odt-ltr-term">HAVING</bdi> بالاقتران مع جملة <bdi dir="ltr" class="odt-ltr-term">GROUP BY.</bdi> <strong>تقوم</strong> جملة <bdi dir="ltr" class="odt-ltr-term">HAVING</bdi> <strong>بتصفية مجموعات من الصفوف</strong>.</p>
+<p>تمامًا كما هو الحال مع جملة <bdi dir="ltr" class="odt-ltr-term">WHERE</bdi>، فإن بناء الجملة</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">     <span style="font-weight:bold">HAVING</span> <span style="font-style:italic">expression opérateur requête </span></span></span>
+</code></pre></div>
+
+<p>ممكنة، مع القيد المذكور سابقًا بأن <em>التعبير</em> يجب أن يكون أحد التعبيرات <em><bdi dir="ltr" class="odt-ltr-term">expri</bdi></em> في الجملة</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">     <span style="font-weight:bold">GROUP BY</span> <span style="font-style:italic">expr1, expr2</span>, ...</span></span>
+</code></pre></div>
+
+<p><strong>أمثلة</strong></p>
+<p>ما هي أرقام مبيعات الكتب التي يزيد سعرها عن 200 فرنك؟</p>
+<p>أولاً، دعونا نعرض الكميات المباعة حسب العنوان:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">qte</span><span class="p">)</span><span class="w"> </span><span class="n">QTE</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">,</span><span class="w"> </span><span class="n">DETAILS</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">DETAILS</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">isbn</span>
+<a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="w">    </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">titre</span>
+</code></pre></div>
+<p><img src="images/10000000000000C400000078499745AB.png" width="157" height="96" style="width:4.149cm;height:2.54cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C400000078499745AB.png" /></p>
+<p>الآن، دعونا نقوم بتصفية العناوين:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">qte</span><span class="p">)</span><span class="w"> </span><span class="n">QTE</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">,</span><span class="w"> </span><span class="n">DETAILS</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">DETAILS</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">isbn</span>
+<a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="w">    </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">titre</span>
+<a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="w">    </span><span class="k">having</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prixvente</span><span class="o">&gt;</span><span class="mi">200</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="images/10000000000000C300000069973ECCBA.png" width="156" height="84" style="width:4.128cm;height:2.223cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C300000069973ECCBA.png" /></p>
+<p>ربما كان من الأوضح أن نكتب:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">qte</span><span class="p">)</span><span class="w"> </span><span class="n">QTE</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">,</span><span class="w"> </span><span class="n">DETAILS</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">DETAILS</span><span class="p">.</span><span class="n">isbn</span><span class="o">=</span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">isbn</span>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">ARTICLES</span><span class="p">.</span><span class="n">prixvente</span><span class="o">&gt;</span><span class="mi">200</span>
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="w">    </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">titre</span>
+</code></pre></div>
+<p><img src="images/10000000000000C500000067A841E54B.png" width="158" height="82" style="width:4.168cm;height:2.178cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C500000067A841E54B.png" /></p>
+<h3 id="625">6.2.5. <span style="color: #4f81bd">الاستعلامات المتداخلة</span></h3>
+<p>في حالة الاستعلامات المتداخلة، يوجد استعلام رئيسي (الاستعلام الخارجي) واستعلام فرعي (الاستعلام الداخلي). لا يتم تقييم الاستعلام الرئيسي إلا بعد تقييم الاستعلام الفرعي بالكامل.</p>
+<p>تتميز الاستعلامات المترابطة بنفس الصيغة، مع الاختلاف الطفيف التالي: يقوم الاستعلام الفرعي بإجراء عملية ربط على جدول الاستعلام الأصلي. في هذه الحالة، يتم تقييم زوج الاستعلامين الأصلي والفرعي بشكل متكرر لكل صف في الجدول الأصلي.</p>
+<p><strong>مثال</strong></p>
+<p>لنعد إلى المثال الذي نريد فيه الحصول على أسماء العملاء الذين لم يقدموا أي طلبات منذ 24 سبتمبر:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span>
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">clients</span>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">idcli</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span>
+<a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a><span class="w">            </span><span class="k">where</span><span class="w"> </span><span class="n">datecmd</span><span class="o">&gt;=</span><span class="s1">&#39;24-sep-91&#39;</span>
+<a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a><span class="w">                </span><span class="k">and</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span><span class="o">=</span><span class="n">clients</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="images/100000000000006600000067D7A37F6F.png" width="82" height="82" style="width:2.159cm;height:2.18cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000006600000067D7A37F6F.png" /></p>
+<p>يعمل الاستعلام الأصلي على جدول <em>العملاء</em>. ويقوم الاستعلام الفرعي بإجراء ربط بين جدولي <em>العملاء والطلبات</em>. وبالتالي، فإن هذا استعلام مترابط. بالنسبة لكل صف في جدول <em>العملاء</em>، يتم تشغيل الاستعلام الفرعي: حيث يبحث عن <em>معرف</em> العميل في الطلبات التي تم تقديمها بعد 24 سبتمبر. وإذا لم يعثر على أي شيء (<em><bdi dir="ltr" class="odt-ltr-term">not exists</bdi></em>)، يتم عرض اسم العميل. ثم ينتقل إلى الصف التالي في جدول <em>العملاء</em>.</p>
+<h3 id="626-select">6.2.6. <span style="color: #4f81bd">معايير كتابة جملة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi></span></h3>
+<p>لقد رأينا، في عدة مناسبات، أنه من الممكن الحصول على نفس النتيجة باستخدام جمل <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> مختلفة. لنأخذ مثالاً: عرض العملاء الذين قدموا طلبات:</p>
+<p><strong>الانضمام</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="k">SQL</span><span class="o">&gt;</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">clients</span><span class="p">,</span><span class="n">commandes</span>
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">clients</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span>
+</code></pre></div>
+<p><img src="images/100000000000006600000068EBEEBF10.png" width="82" height="83" style="width:2.159cm;height:2.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000006600000068EBEEBF10.png" /></p>
+<p><strong>الاستعلامات المتداخلة</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span>
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">clients</span>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">idcli</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="p">)</span>
+</code></pre></div>
+<p>يعطي نفس النتيجة.</p>
+<p><strong>الاستعلامات المرتبطة</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="k">SQL</span><span class="o">&gt;</span>
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">clients</span>
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">commandes</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">commandes</span><span class="p">.</span><span class="n">idcli</span><span class="o">=</span><span class="n">clients</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<p>يعطي نفس النتيجة.</p>
+<p>يقترح المؤلفان كريستيان ماري وغاي ليدانت، في كتابهما &quot;<bdi dir="ltr" class="odt-ltr-term">SQL: Introduction</bdi>, <bdi dir="ltr" class="odt-ltr-term">Programming</bdi>, <bdi dir="ltr" class="odt-ltr-term">and Mastery</bdi>&quot;، بعض معايير الاختيار:</p>
+<p><strong>الأداء</strong></p>
+<p>لا يعرف المستخدم كيف &quot;تتمكن&quot; نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) من العثور على النتائج التي يطلبها. ولذلك، فإنه من خلال التجربة فقط سيكتشف أن استعلامًا ما أكثر كفاءة من آخر. ويؤكد ماري وليدانت من واقع خبرتهما أن الاستعلامات المترابطة تبدو عمومًا أبطأ من الاستعلامات المتداخلة أو عمليات الربط.</p>
+<p><strong>الصياغة</strong></p>
+<p>غالبًا ما تكون الصياغة باستخدام الاستعلامات المتداخلة أكثر قابلية للقراءة وبديهية من عمليات الربط. ومع ذلك، فهي ليست قابلة للاستخدام دائمًا. يجب ملاحظة نقطتين على وجه الخصوص:</p>
+<ul>
+  <li>يجب إدراج الجداول التي تحتوي على الأعمدة المحددة في جملة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> (<bdi dir="ltr" class="odt-ltr-term">SELECT col1</bdi>, <bdi dir="ltr" class="odt-ltr-term">col2</bdi>, ...) بعد الكلمة الرئيسية <bdi dir="ltr" class="odt-ltr-term">FROM.</bdi> ثم يتم إجراء الضرب الديكارتي لهذه الجداول، وهو ما يُعرف باسم عملية الربط.
+  </li>
+</ul>
+
+<ul>
+  <li>عندما يعرض الاستعلام نتائج من <b>جدول </b>واحد، ويستلزم تصفية صفوف ذلك الجدول الرجوع إلى جدول آخر، يمكن استخدام الاستعلامات المتداخلة.
+  </li>
+</ul>
+<h2 id="63">6.3. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">امتدادات بناء الجملة</span></strong></span></h2>
+<p>للتسهيل، قدمنا في الغالب صيغًا مختصرة للأوامر المختلفة. في هذا القسم، نقدم صيغها الموسعة. وهي واضحة بذاتها لأنها مشابهة لتلك الخاصة بأمر <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> الذي تمت دراسته على نطاق واسع.</p>
+<p><strong><bdi dir="ltr" class="odt-ltr-term">INSERT</bdi></strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>الصيغة 1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">INSERT INTO</bdi> </b><i><bdi dir="ltr" class="odt-ltr-term">table</bdi> (<bdi dir="ltr" class="odt-ltr-term">col1</bdi>, <bdi dir="ltr" class="odt-ltr-term">col2</bdi>, ...) </i><b><bdi dir="ltr" class="odt-ltr-term">VALUES</bdi> </b><i>(<bdi dir="ltr" class="odt-ltr-term">val1</bdi>, <bdi dir="ltr" class="odt-ltr-term">val2</bdi>, ...)</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>الصيغة 2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">INSERT INTO</bdi> </b><i><bdi dir="ltr" class="odt-ltr-term">table</bdi> (<bdi dir="ltr" class="odt-ltr-term">col1</bdi>, <bdi dir="ltr" class="odt-ltr-term">col2</bdi>, ..) (<bdi dir="ltr" class="odt-ltr-term">query</bdi>)</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>التفسير
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تم عرض هاتين الصيغتين</div></td></tr></table>
+
+<p><strong><bdi dir="ltr" class="odt-ltr-term">DELETE</bdi></strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>الصيغة 1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>حذف من </b><i>الجدول </i><b>حيث </b><i>الشرط</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>التفسير
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">هذه الصيغة معروفة جيدًا. لاحظ أن الشرط قد يحتوي على استعلام يستخدم صيغة <i><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> تعبير عامل (استعلام)</i></div></td></tr></table>
+
+<p><strong><bdi dir="ltr" class="odt-ltr-term">UPDATE</bdi></strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>syntax1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>تحديث </b><i>الجدول</i></div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">SET</bdi> </b><i><bdi dir="ltr" class="odt-ltr-term">col1</bdi>=<bdi dir="ltr" class="odt-ltr-term">expr1</bdi>, <bdi dir="ltr" class="odt-ltr-term">col2</bdi>=<bdi dir="ltr" class="odt-ltr-term">expr2</bdi>, ...</i></div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b><i>الشرط</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>التفسير
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تم عرض هذه الصيغة بالفعل. لاحظ أن الشرط قد يحتوي على استعلام يستخدم صيغة <b><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b><i>تعبير عامل (استعلام)</i></div></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>صيغة2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>تحديث </b><i>الجدول</i></div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">SET</bdi> </b><i>(<bdi dir="ltr" class="odt-ltr-term">col1</bdi>, <bdi dir="ltr" class="odt-ltr-term">col2</bdi>, ..) = <bdi dir="ltr" class="odt-ltr-term">query1</bdi></i>, <i>(<bdi dir="ltr" class="odt-ltr-term">cola</bdi>, <bdi dir="ltr" class="odt-ltr-term">colb</bdi>, ..) = <bdi dir="ltr" class="odt-ltr-term">query2</bdi></i>, ...</div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> </b><i>الشرط</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>التفسير
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">قد تأتي القيم المخصصة للأعمدة المختلفة من استعلام.</div></td></tr></table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
