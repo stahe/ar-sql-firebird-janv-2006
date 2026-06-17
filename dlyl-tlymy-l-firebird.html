@@ -1,0 +1,1002 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-sql-firebird-janv-2006/dlyl-tlymy-l-firebird.html">
+      
+      
+        <link rel="prev" href="mqdm.html">
+      
+      
+        <link rel="next" href="mqdm-l-l-sql.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>2. دليل تعليمي لـ Firebird - مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-firebird" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" class="md-header__button md-logo" aria-label="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. دليل تعليمي لـ Firebird
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-sql-firebird-janv-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" class="md-nav__button md-logo" aria-label="مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    مقدمة إلى لغة SQL باستخدام نظام إدارة قواعد البيانات Firebird
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-sql-firebird-janv-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. دليل تعليمي لـ Firebird
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dlyl-tlymy-l-firebird.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. دليل تعليمي لـ Firebird
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-firebird" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. أين يمكن العثور على Firebird؟
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-firebird" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. : وثائق Firebird
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-sgbd-firebird-ib-expert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. العمل مع SGBD Firebird باستخدام IB- Expert
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. إنشاء جدول بيانات
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. إدخال البيانات في الجدول
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-sql-ib-expert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. المحرر SQL الخاص بـ [IB-Expert]
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-l-sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. مقدمة إلى لغة SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ltbyrt-fy-l-sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. التعبيرات في لغة SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="llqt-byn-ljdwl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. العلاقات بين الجداول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tmyq-lmrf-bl-sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. تعميق المعرفة بلغة SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dr-lwwl-lmtzmn-l-lbynt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. إدارة الوصول المتزامن إلى البيانات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tthbyt-wstkhdm-brnmj-tshyl-odbc-l-firebird.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تثبيت واستخدام برنامج تشغيل ODBC لـ [Firebird]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-firebird">2. <span style="color: #365f91"><strong>دليل تعليمي لـ <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi></strong></span></h1>
+<p>قبل الخوض في أساسيات لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>، نقدم للقارئ شرحًا حول كيفية تثبيت <bdi dir="ltr" class="odt-ltr-term">Firebird SGBD</bdi> بالإضافة إلى العميل الرسومي <bdi dir="ltr" class="odt-ltr-term">IB-Expert.</bdi></p>
+<h2 id="21-firebird">2.1. <span style="color: #4f81bd">أين يمكن العثور على <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>؟</span></h2>
+<p>الموقع الرئيسي لـ<span id="firebird" name="firebird" class="odt-bookmark-anchor"></span> <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> هو [<bdi dir="ltr" class="odt-ltr-term">http://firebird.sourceforge.net/</bdi>]. توفر صفحة التنزيلات الروابط التالية (أبريل 2005):</p>
+<p><img src="images/100000000000029C000001F5CFB40258.png" width="467" height="351" style="width:12.363cm;height:9.278cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029C000001F5CFB40258.png" /></p>
+<p>سيتم تنزيل العناصر التالية:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>firebird-win32
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">ملف <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> لنظام التشغيل <bdi dir="ltr" class="odt-ltr-term">Windows</bdi></div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>firebird-net-provider
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">مكتبة فئات للتطبيقات .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> تتيح الوصول إلى <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> دون الحاجة إلى برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">ODBC.</bdi></div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>firebird-ODBC-driver
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">برنامج التشغيل <bdi dir="ltr" class="odt-ltr-term">ODBC</bdi> الخاص بـ <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi></div></td></tr></table>
+
+<p>قم بتثبيت هذه العناصر. يتم تثبيت <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> في مجلد يحتوي على محتويات مشابهة لما يلي:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000016C000000F954F34DD9.png" width="291" height="199" style="display:inline-block; margin:4px;width:7.694cm;height:5.267cm;" class="odt-zoomable" data-zoom-src="images/100000000000016C000000F954F34DD9.png" /></td></tr></table>
+
+<p>توجد الملفات الثنائية في المجلد [bin]:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000980000018EB6B815A2.png" width="106" height="278" style="display:inline-block; margin:4px;width:2.817cm;height:7.368cm;" class="odt-zoomable" data-zoom-src="images/10000000000000980000018EB6B815A2.png" /></td></tr></table>
+
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fbguard.exe
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">يسمح بتشغيل/إيقاف <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi></div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>isql.exe
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">العميل الذي يتيح إدارة قواعد البيانات</div></td></tr></table>
+
+<p>تجدر الإشارة إلى أن اسم مسؤول <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> افتراضيًا هو [<bdi dir="ltr" class="odt-ltr-term">SYSDBA</bdi>] وكلمة مروره هي [<bdi dir="ltr" class="odt-ltr-term">masterkey</bdi>]. تم تثبيت قوائم في [<bdi dir="ltr" class="odt-ltr-term">Démarrer</bdi>]:</p>
+<p><img src="images/10000000000000B50000005C44F7E193.png" width="181" height="92" style="width:4.782cm;height:2.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000B50000005C44F7E193.png" /></p>
+<p>يتيح الخيار [<bdi dir="ltr" class="odt-ltr-term">Firebird Guardian</bdi>] تشغيل/إيقاف <bdi dir="ltr" class="odt-ltr-term">SGBD.</bdi> بعد التشغيل، تظل أيقونة <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> في شريط مهام ويندوز:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000340000002BBE55685B.png" width="52" height="43" style="display:inline-block; margin:4px;width:1.374cm;height:1.132cm;" class="odt-zoomable" data-zoom-src="images/10000000000000340000002BBE55685B.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000B1000000517CF578E2.png" width="177" height="81" style="display:inline-block; margin:4px;width:4.676cm;height:2.136cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B1000000517CF578E2.png" /></td></tr></table>
+
+<p>لإنشاء قواعد بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> واستخدامها باستخدام عميل سطر الأوامر [<bdi dir="ltr" class="odt-ltr-term">isql.exe</bdi>]، من الضروري قراءة الوثائق المرفقة مع المنتج في المجلد [doc].</p>
+<p><span id="docfirebird" name="docfirebird" class="odt-bookmark-anchor"></span>
+<span id="ibexpert1" name="ibexpert1" class="odt-bookmark-anchor"></span></p>
+<h2 id="22-firebird">2.2. <span style="color: #4f81bd">: وثائق <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi></span></h2>
+<p>يمكن العثور على الوثائق الخاصة بـ <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> ولغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> على موقع <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> (يناير 2006):</p>
+<p><img src="images/100000000000024000000101E38316E1.png" width="461" height="206" style="width:12.188cm;height:5.438cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024000000101E38316E1.png" /></p>
+<p>تتوفر أدلة متنوعة باللغة الإنجليزية:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Firebird 1.5 Quick Start Guide
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">للبدء باستخدام <bdi dir="ltr" class="odt-ltr-term">FB</bdi></div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Firebird 1.5 Error Codes
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">لفهم رموز الأخطاء التي ترسلها <bdi dir="ltr" class="odt-ltr-term">FB</bdi></div></td></tr></table>
+
+<p>كما تتوفر أدلة تدريبية حول لغة <bdi dir="ltr" class="odt-ltr-term">SQL:</bdi></p>
+<p><img src="images/10000000000002B800000109096DAA6C.png" width="487" height="186" style="width:12.889cm;height:4.909cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B800000109096DAA6C.png" /></p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Data Definition Guide
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">لمعرفة كيفية إنشاء الجداول، وأنواع البيانات التي يمكن استخدامها، ...</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Language Reference
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">دليل مرجعي لتعلم لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi></div></td></tr></table>
+
+<p>من الطرق السريعة للعمل مع <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> وتعلم لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> استخدام عميل رسومي. ومن أمثلة هذه العملاء برنامج <bdi dir="ltr" class="odt-ltr-term">IB-Expert</bdi> الموصوف في الفقرة التالية.</p>
+<p><span id="ibexpert" name="ibexpert" class="odt-bookmark-anchor"></span></p>
+<h2 id="23-sgbd-firebird-ib-expert">2.3. <span style="color: #4f81bd"><strong>العمل مع <bdi dir="ltr" class="odt-ltr-term">SGBD Firebird</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">IB-</bdi></strong> <strong><bdi dir="ltr" class="odt-ltr-term">Expert</bdi></strong></span></h2>
+<p>الموقع الرئيسي لـ <bdi dir="ltr" class="odt-ltr-term">IB-Expert</bdi> هو [<bdi dir="ltr" class="odt-ltr-term">http://www.ibexpert.com/</bdi>]. توفر صفحة التنزيلات الروابط التالية:</p>
+<p><img src="images/10000000000001D0000001AC51C2A46D.png" width="324" height="300" style="width:8.585cm;height:7.927cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D0000001AC51C2A46D.png" /></p>
+<p>سنختار الإصدار المجاني [<bdi dir="ltr" class="odt-ltr-term">Personal Edition</bdi>]. بمجرد تنزيله وتثبيته، سيكون لدينا مجلد مشابه لما يلي:</p>
+<p><img src="images/100000000000017200000145CD603301.png" width="259" height="227" style="width:6.84cm;height:6.013cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017200000145CD603301.png" /></p>
+<p>الملف القابل للتنفيذ هو [<bdi dir="ltr" class="odt-ltr-term">ibexpert.exe</bdi>]. عادةً ما يتوفر اختصار في القائمة [<bdi dir="ltr" class="odt-ltr-term">Démarrer</bdi>]:</p>
+<p><img src="images/10000000000001B200000058D089D858.png" width="304" height="62" style="width:8.038cm;height:1.628cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B200000058D089D858.png" /></p>
+<p>بمجرد تشغيله، يعرض <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> النافذة التالية:</p>
+<p><img src="images/100000000000011C000000C2791DD7B5.png" width="199" height="136" style="width:5.253cm;height:3.586cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011C000000C2791DD7B5.png" /></p>
+<p>لنستخدم الخيار [<bdi dir="ltr" class="odt-ltr-term">Database/Create Database</bdi>]<span id="createdatabase" name="createdatabase" class="odt-bookmark-anchor"></span> لإنشاء قاعدة بيانات:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Server
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">قد يكون [<bdi dir="ltr" class="odt-ltr-term">local</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">remote</bdi>]. هنا، يقع خادمنا على نفس الجهاز الذي يعمل عليه [<bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi>]. لذا نختار [<bdi dir="ltr" class="odt-ltr-term">local</bdi>]</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Database
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">استخدم زر من النوع [<bdi dir="ltr" class="odt-ltr-term">dossier</bdi>] في القائمة المنسدلة لتحديد ملف قاعدة البيانات. يقوم <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> بوضع قاعدة البيانات بأكملها في ملف واحد. وهذه إحدى ميزاته. يمكن نقل قاعدة البيانات من جهاز إلى آخر بمجرد نسخ الملف. ويتم إضافة اللاحقة [.gdb] تلقائيًا.</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Username
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">SYSDBA</bdi> </b>هو المسؤول الافتراضي في الإصدارات الحالية من <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi></div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Password
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">masterkey</bdi> </b>هي كلمة مرور المسؤول <bdi dir="ltr" class="odt-ltr-term">SYSDBA</bdi> في إصدارات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> الحالية</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Dialect
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">اللهجة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المطلوب استخدامها</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Register Database
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">إذا تم تحديد المربع، فسيعرض <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> رابطًا إلى قاعدة البيانات التي تم إنشاؤها بعد إنشائها</div></td></tr></table>
+
+<p>إذا ظهرت لك الرسالة التالية عند النقر على زر الإنشاء [<bdi dir="ltr" class="odt-ltr-term">OK</bdi>]:</p>
+<p><img src="images/100000000000016100000081ABF4648E.png" width="247" height="90" style="width:6.537cm;height:2.383cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016100000081ABF4648E.png" /></p>
+<p>فهذا يعني أنك لم تقم بتشغيل <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> قم بتشغيله. ستظهر نافذة جديدة:</p>
+<p><img src="images/10000000000002BF00000122360041C0.png" width="492" height="203" style="width:13.014cm;height:5.364cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BF00000122360041C0.png" /></p>
+<p><span id="dbarticles" name="dbarticles" class="odt-bookmark-anchor"></span></p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Charset
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">عائلة الأحرف المطلوب استخدامها. على الرغم من أن لقطة الشاشة أعلاه لا تحتوي على أي معلومات، يُنصح باختيار عائلة الأحرف [<bdi dir="ltr" class="odt-ltr-term">ISO-8859-1</bdi>] من القائمة المنسدلة، والتي تتيح استخدام الأحرف اللاتينية المُشَدَّدة.</div></td></tr></table>
+
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Server version
+</code></pre></div>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi>] قادر على إدارة مختلف إصدارات <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> المشتقة من <bdi dir="ltr" class="odt-ltr-term">Interbase.</bdi> اختر إصدار <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> الذي قمت بتثبيته:</div><img src="images/10000000000001E300000044A1D6FA65.png" width="338" height="47" style="display:inline-block; margin:4px;width:8.934cm;height:1.252cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E300000044A1D6FA65.png" /></td></tr></table>
+
+<p>بمجرد تأكيد هذه النافذة الجديدة بواسطة [<bdi dir="ltr" class="odt-ltr-term">Register</bdi>]، نحصل على النتيجة التالية:</p>
+<p><img src="images/100000000000013A000000D07E511B2E.png" width="251" height="166" style="width:6.634cm;height:4.392cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013A000000D07E511B2E.png" /></p>
+<p>للوصول إلى قاعدة البيانات التي تم إنشاؤها، ما عليك سوى النقر مرتين على الرابط الخاص بها. عندئذٍ يعرض <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> شجرة تتيح الوصول إلى خصائص قاعدة البيانات:</p>
+<p><img src="images/100000000000013B000000FBEC216B48.png" width="220" height="176" style="width:5.824cm;height:4.646cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013B000000FBEC216B48.png" /></p>
+<h2 id="24">2.4. <span style="color: #4f81bd">إنشاء جدول بيانات</span></h2>
+<p>لنقم بإنشاء جدول. نضغط بزر الفأرة الأيمن على [<bdi dir="ltr" class="odt-ltr-term">Tables</bdi>] (انظر النافذة أعلاه) ونختار الخيار [<bdi dir="ltr" class="odt-ltr-term">New Table</bdi>]. تظهر لنا نافذة تعريف خصائص الجدول:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000025C0000011864B71078.png" width="302" height="140" style="display:inline-block; margin:4px;width:7.99cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000025C0000011864B71078.png" /></td></tr></table>
+
+<p>لنبدأ بتسمية الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>] باستخدام حقل الإدخال [1]:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000257000001547586EAE1.png" width="300" height="170" style="display:inline-block; margin:4px;width:7.925cm;height:4.498cm;" class="odt-zoomable" data-zoom-src="images/1000000000000257000001547586EAE1.png" /></td></tr></table>
+
+<p>لنستخدم حقل الإدخال [2] لتعريف مفتاح أساسي [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>]:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001DC000000E2D6A28434.png" width="238" height="113" style="display:inline-block; margin:4px;width:6.297cm;height:2.99cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DC000000E2D6A28434.png" /></td></tr></table>
+
+<p>يتم تعيين حقل كمفتاح أساسي بالنقر المزدوج على منطقة [<bdi dir="ltr" class="odt-ltr-term">PK</bdi>] (المفتاح الأساسي) الخاصة بالحقل. لنقم بإضافة حقول باستخدام الزر الموجود أعلى [3]:</p>
+<p><img src="images/1000000000000235000000E89CC75685.png" width="452" height="185" style="width:11.952cm;height:4.905cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000235000000E89CC75685.png" /></p>
+<p>ما لم نقم بـ«تجميع» تعريفنا، لن يتم إنشاء الجدول. لنستخدم الزر [<bdi dir="ltr" class="odt-ltr-term">Compile</bdi>] أعلاه لإنهاء تعريف الجدول. يقوم <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> بإعداد استعلامات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء الجدول ويطلب التأكيد:</p>
+<p><img src="images/10000000000001F000000156BF4EB358.png" width="397" height="274" style="width:10.493cm;height:7.239cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F000000156BF4EB358.png" /></p>
+<p>ومن المثير للاهتمام أن <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> يعرض الاستعلامات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي نفذها. وهذا يتيح التعلم في آن واحد لكل من لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> وكذلك اللهجة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي قد تكون خاصة بالبرنامج. يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>] تأكيد المعاملة الجارية، بينما يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">Rollback</bdi>] إلغاءها. هنا نقبلها باستخدام [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>]. وبمجرد القيام بذلك، يقوم <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> بإضافة الجدول الذي تم إنشاؤه إلى شجرة قاعدة البيانات لدينا:</p>
+<p><img src="images/100000000000013C0000010895A3EEDA.png" width="221" height="185" style="width:5.851cm;height:4.888cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013C0000010895A3EEDA.png" /></p>
+<p>بالنقر المزدوج على الجدول، يمكننا الوصول إلى خصائصه:</p>
+<p><img src="images/100000000000024E000000C80B48A012.png" width="413" height="140" style="width:10.929cm;height:3.697cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024E000000C80B48A012.png" /></p>
+<p>تتيح لنا لوحة [<bdi dir="ltr" class="odt-ltr-term">Constraints</bdi>] إضافة قيود تكامل جديدة إلى الجدول. لنفتحها:</p>
+<p><img src="images/100000000000029300000059883C8C55.png" width="461" height="62" style="width:12.199cm;height:1.64cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029300000059883C8C55.png" /></p>
+<p>نجد هنا قيد المفتاح الأساسي الذي أنشأناه. يمكننا إضافة قيود أخرى:</p>
+<ul>
+<li>مفاتيح خارجية [<bdi dir="ltr" class="odt-ltr-term">Foreign Keys</bdi>]</li>
+<li>قيود سلامة الحقول [<bdi dir="ltr" class="odt-ltr-term">Checks</bdi>]</li>
+<li>قيود تفرد الحقول [<bdi dir="ltr" class="odt-ltr-term">Uniques</bdi>]</li>
+</ul>
+<p>نشير إلى أن:</p>
+<ul>
+<li>يجب أن تكون قيم الحقول [<bdi dir="ltr" class="odt-ltr-term">ID, PRIX, STOCKACTUEL, STOKMINIMUM</bdi>] أكبر من 0</li>
+<li>يجب أن يكون الحقل [<bdi dir="ltr" class="odt-ltr-term">NOM</bdi>] غير فارغ وفريدًا</li>
+</ul>
+<p>لنفتح اللوحة [<bdi dir="ltr" class="odt-ltr-term">Checks</bdi>] ونضغط بزر الماوس الأيمن داخل مساحة تعريف القيود الخاصة بها لإضافة قيد جديد:</p>
+<p><img src="images/1000000000000160000000A5AD45096D.png" width="246" height="115" style="width:6.514cm;height:3.055cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000160000000A5AD45096D.png" /></p>
+<p>لنحدد القيود المطلوبة:</p>
+<p><img src="images/10000000000000F6000000CC296F6CC5.png" width="197" height="163" style="width:5.207cm;height:4.318cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000CC296F6CC5.png" /></p>
+<p>يُلاحظ أعلاه أن القيد [<bdi dir="ltr" class="odt-ltr-term">NOM</bdi>&lt;&gt;&#x27;&#x27;] يستخدم علامتي اقتباس مفردة وليس علامتي اقتباس مزدوجة. لن نقوم بتجميع هذه القيود باستخدام الزر [<bdi dir="ltr" class="odt-ltr-term">Compile</bdi>] أعلاه:</p>
+<p><img src="images/10000000000001EB000000E85058E006.png" width="343" height="162" style="width:9.084cm;height:4.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB000000E85058E006.png" /></p>
+<p>مرة أخرى، يُظهر <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> طابعًا تعليميًا من خلال الإشارة إلى الاستعلامات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي نفذها. لننتقل الآن إلى اللوحة [<bdi dir="ltr" class="odt-ltr-term">Constraints/Uniques</bdi>] للإشارة إلى أن الاسم يجب أن يكون فريدًا. وهذا يعني أنه لا يمكن وجود نفس الاسم مرتين في الجدول.</p>
+<p><img src="images/10000000000001C3000000B94989C09B.png" width="315" height="130" style="width:8.341cm;height:3.429cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C3000000B94989C09B.png" /></p>
+<p>لنحدد القيد:</p>
+<p><img src="images/100000000000018B0000008A85D0443A.png" width="276" height="97" style="width:7.306cm;height:2.554cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018B0000008A85D0443A.png" /></p>
+<p>ثم نقوم بتجميعها. بعد ذلك، نفتح لوحة [<bdi dir="ltr" class="odt-ltr-term">DDL</bdi>] (لغة تعريف البيانات) الخاصة بالجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>]: </p>
+<p><img src="images/1000000000000235000000587021FF84.png" width="452" height="70" style="width:11.952cm;height:1.852cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000235000000587021FF84.png" /></p>
+<p>يقدم هذا الرمز <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لتوليد الجدول مع جميع قيوده. يمكن حفظ هذا الرمز في برنامج نصي لإعادة تشغيله لاحقًا:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SET</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">DIALECT</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">SET</span><span class="w"> </span><span class="k">NAMES</span><span class="w"> </span><span class="k">NONE</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">ID</span><span class="w">            </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">NOM</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="n">PRIX</span><span class="w">          </span><span class="n">DOUBLE</span><span class="w"> </span><span class="k">PRECISION</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="n">STOCKACTUEL</span><span class="w">   </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="n">STOCKMINIMUM</span><span class="w">  </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">);</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">CHK_ID</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">CHK_PRIX</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">PRIX</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">CHK_STOCKACTUEL</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">STOCKACTUEL</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">CHK_STOCKMINIMUM</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">STOCKMINIMUM</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">CHK_NOM</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">NOM</span><span class="o">&lt;&gt;</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">UNQ_NOM</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="p">(</span><span class="n">NOM</span><span class="p">);</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ARTICLES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">PK_ARTICLES</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="25">2.5. <span style="color: #4f81bd">إدخال البيانات في الجدول</span></h2>
+<p>حان الوقت الآن لإدخال البيانات في الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>]. وللقيام بذلك، سنستخدم لوحة التحكم الخاصة به [<bdi dir="ltr" class="odt-ltr-term">Data</bdi>]:</p>
+<p><img src="images/10000000000001CC0000009C5D747458.png" width="318" height="112" style="width:8.401cm;height:2.97cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CC0000009C5D747458.png" /></p>
+<p>يتم إدخال البيانات بالنقر المزدوج على حقول الإدخال في كل سطر من الجدول. يتم إضافة صف جديد باستخدام الزر [+]، وحذف صف باستخدام الزر [-]. تتم هذه العمليات ضمن معاملة يتم تأكيدها بواسطة الزر [<bdi dir="ltr" class="odt-ltr-term">Commit Transaction</bdi>] (انظر أعلاه). وبدون هذا التأكيد، ستُفقد البيانات.</p>
+<p><span id="editeursql" name="editeursql" class="odt-bookmark-anchor"></span></p>
+<h2 id="26-sql-ib-expert">2.6. <span style="color: #4f81bd">المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الخاص بـ [<bdi dir="ltr" class="odt-ltr-term">IB-Expert</bdi>]</span></h2>
+<p>تتيح لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (لغة الاستعلام الهيكلية) للمستخدم ما يلي:</p>
+<ol>
+<li>إنشاء جداول مع تحديد نوع البيانات التي ستخزنها، والقيود التي يجب أن تستوفيها هذه البيانات</li>
+</ol>
+<ol start="2">
+  <li>إدراج البيانات فيها
+  </li>
+  <li>تعديل بعضها
+  </li>
+  <li>حذف بيانات أخرى
+  </li>
+  <li>استخراج المحتوى منها للحصول على معلومات
+  </li>
+  <li>...
+  </li>
+</ol>
+
+<p>يتيح <bdi dir="ltr" class="odt-ltr-term">IBExpert</bdi> للمستخدم إجراء العمليات من 1 إلى 4 بطريقة رسومية. وقد رأينا ذلك للتو. عندما تحتوي قاعدة البيانات على العديد من الجداول التي تحتوي كل منها على مئات الأسطر، نحتاج إلى معلومات يصعب الحصول عليها بصريًا. لنفترض على سبيل المثال أن متجرًا إلكترونيًا على الويب يستقبل آلاف المشترين شهريًا. يتم تسجيل جميع عمليات الشراء في قاعدة بيانات. بعد ستة أشهر، نكتشف أن المنتج «<bdi dir="ltr" class="odt-ltr-term">X</bdi>» معيب. نرغب في الاتصال بجميع الأشخاص الذين اشتروه حتى يعيدوا المنتج لاستبداله مجانًا. كيف يمكن العثور على عناوين هؤلاء المشترين؟</p>
+<ol>
+  <li>يمكننا الاطلاع بصريًّا على جميع الجداول والبحث عن هؤلاء المشترين. سيستغرق ذلك بضع ساعات.
+  </li>
+  <li>يمكن إصدار أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي سيعطي قائمة بهؤلاء الأشخاص في غضون ثوانٍ معدودة
+  </li>
+</ol>
+
+<p>تكون لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> مفيدة </p>
+<ul>
+  <li>عندما تكون كمية البيانات في الجداول كبيرة
+  </li>
+  <li>عندما يكون هناك العديد من الجداول المرتبطة ببعضها البعض
+  </li>
+  <li>عندما تكون المعلومات المطلوبة موزعة على عدة جداول
+  </li>
+  <li>...
+  </li>
+</ul>
+
+<p>نقدم الآن محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الخاص بـ <bdi dir="ltr" class="odt-ltr-term">IBExpert.</bdi> يمكن الوصول إليه عبر الخيار [<bdi dir="ltr" class="odt-ltr-term">Tools/SQL Editor</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">F12</bdi>]:</p>
+<p><img src="images/10000000000001BD0000005547C3D716.png" width="356" height="68" style="width:9.414cm;height:1.794cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BD0000005547C3D716.png" /></p>
+<p>وبذلك يمكننا الوصول إلى محرر استعلامات متطور <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> يمكننا من خلاله تجربة الاستعلامات. لنكتب استعلامًا:</p>
+<p><img src="images/10000000000001A40000007268367E9D.png" width="313" height="82" style="width:8.274cm;height:2.166cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A40000007268367E9D.png" /></p>
+<p>نقوم بتنفيذ الاستعلام <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> باستخدام الزر [<bdi dir="ltr" class="odt-ltr-term">Execute</bdi>] الموجود أعلاه. ونحصل على النتيجة التالية:</p>
+<p><img src="images/100000000000017300000062A2B8745F.png" width="296" height="78" style="width:7.844cm;height:2.069cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017300000062A2B8745F.png" /></p>
+<p>في الأعلى، تعرض علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Results</bdi>] جدول نتائج الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">Select</bdi>]. لإصدار أمر جديد <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>، يكفي العودة إلى علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Edit</bdi>]. عندها نجد الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي تم تنفيذه.</p>
+<p><img src="images/100000000000018300000031CA59D8D9.png" width="309" height="39" style="width:8.184cm;height:1.035cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018300000031CA59D8D9.png" /></p>
+<p>توجد عدة أزرار مفيدة في شريط الأدوات:</p>
+<ul>
+  <li>يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">New Query</bdi>] الانتقال إلى استعلام جديد <bdi dir="ltr" class="odt-ltr-term">SQL:</bdi>
+  </li>
+</ul>
+
+<p><img src="images/100000000000029F0000005C9684C2EA.png" width="537" height="74" style="width:14.196cm;height:1.946cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029F0000005C9684C2EA.png" /></p>
+<p>وعندها تظهر صفحة تحرير فارغة:</p>
+<p><img src="images/10000000000001D2000000602D426AED.png" width="372" height="77" style="width:9.855cm;height:2.025cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D2000000602D426AED.png" /></p>
+<p>يمكننا بعد ذلك كتابة أمر جديد <bdi dir="ltr" class="odt-ltr-term">SQL:</bdi></p>
+<p><img src="images/10000000000001FD00000062A7B296AF.png" width="407" height="78" style="width:10.767cm;height:2.066cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FD00000062A7B296AF.png" /></p>
+<p>وتنفيذه:</p>
+<p><img src="images/1000000000000155000000917F327163.png" width="273" height="116" style="width:7.216cm;height:3.064cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000155000000917F327163.png" /></p>
+<p>لنعد إلى علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Edit</bdi>]. يتم حفظ الأوامر المختلفة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي تم إصدارها بواسطة [<bdi dir="ltr" class="odt-ltr-term">IB-xpert</bdi>]. يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">Previous Query</bdi>] العودة إلى أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> تم إصداره سابقًا:</p>
+<p><img src="images/100000000000026D00000061DEA33AFC.png" width="496" height="77" style="width:13.134cm;height:2.046cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026D00000061DEA33AFC.png" /></p>
+<p>وبذلك نعود إلى الطلب السابق:</p>
+<p><img src="images/10000000000001E60000006B452EDD3F.png" width="389" height="85" style="width:10.289cm;height:2.258cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E60000006B452EDD3F.png" /></p>
+<p>أما الزر [<bdi dir="ltr" class="odt-ltr-term">Next Query</bdi>] فيتيح الانتقال إلى الأمر التالي <bdi dir="ltr" class="odt-ltr-term">SQL:</bdi></p>
+<p><img src="images/100000000000029F00000065D5ED7FF5.png" width="537" height="81" style="width:14.196cm;height:2.136cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029F00000065D5ED7FF5.png" /></p>
+<p>ثم نجد الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي يلي الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> في قائمة الأوامر المخزنة:</p>
+<p><img src="images/10000000000002A200000063CA8D040D.png" width="539" height="79" style="width:14.265cm;height:2.096cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A200000063CA8D040D.png" /></p>
+<p>يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">Delete Query</bdi>] حذف أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> من قائمة الأوامر المخزنة:</p>
+<p><img src="images/10000000000002CD000000680FEA2EB7.png" width="574" height="83" style="width:15.175cm;height:2.196cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CD000000680FEA2EB7.png" /></p>
+<p>يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">Clear Current Query</bdi>] مسح محتوى المحرر الخاص بالأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المعروض:</p>
+<p><img src="images/100000000000029800000069D9E21A4C.png" width="531" height="84" style="width:14.046cm;height:2.215cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029800000069D9E21A4C.png" /></p>
+<p>يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>] تأكيد التعديلات التي تم إجراؤها على قاعدة البيانات بشكل نهائي:</p>
+<p><img src="images/1000000000000330000000641FC053DE.png" width="571" height="70" style="width:15.106cm;height:1.847cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000330000000641FC053DE.png" /></p>
+<p>يتيح الزر [<bdi dir="ltr" class="odt-ltr-term">RollBack</bdi>] إلغاء التعديلات التي تم إجراؤها على قاعدة البيانات منذ آخر عملية [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>]. إذا لم يتم إجراء أي عملية [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>] منذ الاتصال بقاعدة البيانات، فسيتم إلغاء التعديلات التي تم إجراؤها منذ هذا الاتصال.</p>
+<p><img src="images/10000000000002310000005FC55916CB.png" width="448" height="76" style="width:11.864cm;height:2.006cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002310000005FC55916CB.png" /></p>
+<p>لنأخذ مثالاً. لنقم بإدراج سطر جديد في الجدول:</p>
+<p><img src="images/10000000000002E700000035322F0A87.png" width="630" height="45" style="width:16.669cm;height:1.184cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002E700000035322F0A87.png" /></p>
+<p>يتم تنفيذ الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> ولكن لا يظهر أي عرض. لا يمكننا معرفة ما إذا كان الإدراج قد تم أم لا. لمعرفة ذلك، لنقم بتنفيذ الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي يلي الأمر [<bdi dir="ltr" class="odt-ltr-term">New Query</bdi>]:</p>
+<p><img src="images/100000000000015700000063216F4977.png" width="274" height="79" style="width:7.255cm;height:2.096cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015700000063216F4977.png" /></p>
+<p>ونحصل على النتيجة التالية لـ [<bdi dir="ltr" class="odt-ltr-term">Execute</bdi>]:</p>
+<p><img src="images/100000000000018D000000802CABE41B.png" width="317" height="102" style="width:8.396cm;height:2.706cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018D000000802CABE41B.png" /></p>
+<p>وبالتالي، فقد تم إدراج السطر بالفعل. دعونا الآن نفحص محتوى الجدول بطريقة أخرى. انقر نقرًا مزدوجًا على الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>] في مستكشف قواعد البيانات:</p>
+<p><img src="images/100000000000013C0000010895A3EEDA.png" width="221" height="185" style="width:5.849cm;height:4.886cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013C0000010895A3EEDA.png" /></p>
+<p>ونحصل على الجدول التالي:</p>
+<p><img src="images/10000000000001FD000000A077F4A88B.png" width="407" height="128" style="width:10.767cm;height:3.385cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FD000000A077F4A88B.png" /></p>
+<p>يتيح الزر الذي يحمل رمز السهم أعلاه تحديث الجدول. بعد التحديث، لا يتغير الجدول أعلاه. يبدو أن السطر الجديد لم يتم إدراجه. لنعد إلى المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>) ثم نقوم بتأكيد الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي تم إصداره باستخدام الزر [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>]:</p>
+<p><img src="images/10000000000002970000006671498947.png" width="530" height="81" style="width:14.025cm;height:2.155cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002970000006671498947.png" /></p>
+<p>بعد ذلك، لنعد إلى الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>]. يمكننا ملاحظة أنه لم يتغير شيء حتى عند استخدام الزر [<bdi dir="ltr" class="odt-ltr-term">Refresh</bdi>]:</p>
+<p><img src="images/10000000000001FD000000A077F4A88B.png" width="407" height="128" style="width:10.767cm;height:3.385cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FD000000A077F4A88B.png" /></p>
+<p>أعلاه، لنفتح علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Fields</bdi>] ثم نعود إلى علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Data</bdi>]. هذه المرة، يظهر السطر الذي تم إدراجه بشكل صحيح:</p>
+<p><img src="images/10000000000001B9000000814572FAEE.png" width="352" height="103" style="width:9.324cm;height:2.727cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B9000000814572FAEE.png" /></p>
+<p>عندما يبدأ إصدار الأوامر المختلفة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>، يفتح المحرر ما يُسمى <strong>«معاملة»</strong> في قاعدة البيانات. لن تكون التعديلات التي أجراها محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> عبر أوامر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> مرئية إلا طالما بقينا في نفس المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (يمكن فتح عدة محررات). يبدو الأمر كما لو أن المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لا يعمل على قاعدة البيانات الفعلية بل على نسخة خاصة به. في الواقع، لا تسير الأمور بهذه الطريقة بالضبط، لكن هذه الصورة يمكن أن تساعدنا في فهم مفهوم المعاملة. لن تظهر جميع التعديلات التي أُجريت على النسخة خلال المعاملة في قاعدة البيانات الفعلية إلا بعد المصادقة عليها بواسطة [<bdi dir="ltr" class="odt-ltr-term">Commit Transaction</bdi>]. عندئذٍ تنتهي المعاملة الحالية وتبدأ معاملة جديدة.</p>
+<p>يمكن إلغاء التعديلات التي تم إجراؤها خلال المعاملة من خلال عملية تُسمى [<bdi dir="ltr" class="odt-ltr-term">Rollback</bdi>]. لنقم بالتجربة التالية. لنبدأ معاملة جديدة (يكفي تنفيذ الأمر [<bdi dir="ltr" class="odt-ltr-term">Commit</bdi>] على المعاملة الحالية) باستخدام الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالي:</p>
+<p><img src="images/10000000000000D400000066029FD8BA.png" width="170" height="81" style="width:4.486cm;height:2.155cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D400000066029FD8BA.png" /></p>
+<p>لننفذ هذا الأمر الذي يحذف جميع السطور من الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>]، ثم ننفذ الأمر الجديد <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالي:</p>
+<p><img src="images/10000000000001540000004755A4DBBF.png" width="272" height="57" style="width:7.195cm;height:1.496cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001540000004755A4DBBF.png" /></p>
+<p>ونحصل على النتيجة التالية:</p>
+<p><img src="images/10000000000002240000007C2F998A16.png" width="438" height="99" style="width:11.596cm;height:2.616cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002240000007C2F998A16.png" /></p>
+<p>تم حذف جميع الصفوف. لنتذكر أن هذه العملية تمت على نسخة من الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>]. للتحقق من ذلك، لنضغط مرتين على الجدول [<bdi dir="ltr" class="odt-ltr-term">ARTICLES</bdi>] أدناه:</p>
+<p><img src="images/100000000000013C0000010895A3EEDA.png" width="221" height="185" style="width:5.851cm;height:4.888cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013C0000010895A3EEDA.png" /></p>
+<p>ونعرض علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Data</bdi>]:</p>
+<p><img src="images/10000000000001A3000000AEDB946E10.png" width="335" height="139" style="width:8.867cm;height:3.676cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A3000000AEDB946E10.png" /></p>
+<p>حتى عند استخدام الزر [<bdi dir="ltr" class="odt-ltr-term">Refresh</bdi>] أو الانتقال إلى علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Fields</bdi>] ثم العودة بعد ذلك إلى علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Data</bdi>]، لا يتغير المحتوى أعلاه. وقد تم شرح ذلك. نحن الآن في معاملة أخرى تعمل على نسختها الخاصة. لنعد الآن إلى المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>) ونستخدم الزر [<bdi dir="ltr" class="odt-ltr-term">RollBack</bdi>] لإلغاء عمليات حذف الأسطر التي تمت:</p>
+<p><img src="images/10000000000002AF000000610C034AD3.png" width="549" height="77" style="width:14.534cm;height:2.046cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AF000000610C034AD3.png" /></p>
+<p>يُطلب منا التأكيد:</p>
+<p><img src="images/10000000000000C5000000886744B44B.png" width="138" height="95" style="width:3.646cm;height:2.517cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C5000000886744B44B.png" /></p>
+<p>لنؤكد ذلك. يؤكد المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> أن التعديلات قد تم التراجع عنها:</p>
+<p><img src="images/1000000000000151000000A5EBC33000.png" width="269" height="132" style="width:7.126cm;height:3.485cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000151000000A5EBC33000.png" /></p>
+<p>لنُعيد تشغيل الطلب <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> أعلاه للتحقق. نجد الأسطر التي تم حذفها:</p>
+<p><img src="images/100000000000018C0000009F53376765.png" width="317" height="127" style="width:8.378cm;height:3.369cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018C0000009F53376765.png" /></p>
+<p>أعادت العملية [<bdi dir="ltr" class="odt-ltr-term">Rollback</bdi>] النسخة التي يعمل عليها المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> إلى الحالة التي كانت عليها في بداية المعاملة.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://stahe.github.io/ar-sql-firebird-janv-2006/llqt-byn-ljdwl.html">
       
       
-        <link rel="prev" href="tbyrt-sql.html">
+        <link rel="prev" href="ltbyrt-fy-l-sql.html">
       
       
-        <link rel="next" href="sql-lmtqdm.html">
+        <link rel="next" href="tmyq-lmrf-bl-sql.html">
       
       
         
@@ -332,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="dlyl-firebird.html" class="md-nav__link">
+      <a href="dlyl-tlymy-l-firebird.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. دليل Firebird
+    2. دليل تعليمي لـ Firebird
   
 
     
@@ -386,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="tbyrt-sql.html" class="md-nav__link">
+      <a href="ltbyrt-fy-l-sql.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. تعبيرات SQL
+    4. التعبيرات في لغة SQL
   
 
     
@@ -487,7 +487,7 @@
   <a href="#52" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2. عمليات الانضمام بين جدولين
+        5.2. عمليات الربط بين جدولين
       
     </span>
   </a>
@@ -509,14 +509,14 @@
   
   
     <li class="md-nav__item">
-      <a href="sql-lmtqdm.html" class="md-nav__link">
+      <a href="tmyq-lmrf-bl-sql.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. SQL المتقدم
+    6. تعميق المعرفة بلغة SQL
   
 
     
@@ -602,39 +602,39 @@
 
 <h1 id="5">5. <span style="color: #365f91">العلاقات بين الجداول</span></h1>
 <h2 id="51">5.1. <span style="color: #4f81bd">المفاتيح الخارجية</span></h2>
-<p>قاعدة البيانات العلائقية هي مجموعة من الجداول المرتبطة ببعضها البعض من خلال العلاقات. لنأخذ مثالاً مستوحى من الجدول [<bdi dir="ltr" class="odt-ltr-term">BIBLIO</bdi>] السابق، الذي كان له الهيكل التالي:</p>
-<p><img src="images/100000000000014D0000008AB26B6EA2.png" width="266" height="110" style="width:7.049cm;height:2.921cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D0000008AB26B6EA2.png" /></p>
+<p>قاعدة البيانات العلائقية هي مجموعة من الجداول المرتبطة ببعضها البعض عبر علاقات. لنأخذ مثالاً مستوحى من الجدول [<bdi dir="ltr" class="odt-ltr-term">BIBLIO</bdi>] السابق الذي كانت بنيته كما يلي:</p>
+<p><img src="images/100000000000014D0000008AB26B6EA2.png" width="266" height="110" style="width:7.049cm;height:2.917cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D0000008AB26B6EA2.png" /></p>
 <p>وكان أحد أمثلة المحتوى كما يلي:</p>
 <p><img src="images/1000000000000200000000AAB5E71811.png" width="410" height="136" style="width:10.839cm;height:3.598cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000200000000AAB5E71811.png" /></p>
-<p>قد ترغب في الحصول على معلومات حول المؤلفين المختلفين لهذه الأعمال، مثل <em>أسمائهم</em> <em>الأولى</em> والأخيرة <em>وتاريخ ميلادهم وجنسياتهم</em>. لنقم بإنشاء مثل هذا الجدول. انقر بزر الماوس الأيمن على [<bdi dir="ltr" class="odt-ltr-term">DBBIBLIO / Tables</bdi>] واختر خيار [<bdi dir="ltr" class="odt-ltr-term">New Table</bdi>]:</p>
-<p><img src="images/10000000000001500000018E88305495.png" width="269" height="318" style="width:7.108cm;height:8.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001500000018E88305495.png" /></p>
-<p>الآن دعونا ننشئ الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] التالي:</p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000008C0000006539F73B1A.png" width="112" height="81" style="display:inline-block; margin:4px;width:2.958cm;height:2.134cm;" class="odt-zoomable" data-zoom-src="images/100000000000008C0000006539F73B1A.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000145000000673D89D830.png" width="260" height="82" style="display:inline-block; margin:4px;width:6.877cm;height:2.178cm;" class="odt-zoomable" data-zoom-src="images/1000000000000145000000673D89D830.png" /></td></tr></table>
+<p>قد نرغب في الحصول على معلومات عن المؤلفين المختلفين لهذه الأعمال، على سبيل المثال <em>nom</em> و <em><bdi dir="ltr" class="odt-ltr-term">prénom</bdi></em>، <em>وتاريخ ميلادهم</em>، و <em><bdi dir="ltr" class="odt-ltr-term">nationalité</bdi></em>. لنقم بإنشاء جدول من هذا النوع. نضغط بزر الفأرة الأيمن على [<bdi dir="ltr" class="odt-ltr-term">DBBIBLIO / Tables</bdi>] ثم نختار الخيار [<bdi dir="ltr" class="odt-ltr-term">New Table</bdi>]:</p>
+<p><img src="images/10000000000001500000018E88305495.png" width="269" height="318" style="width:7.108cm;height:8.419cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001500000018E88305495.png" /></p>
+<p>لنقم الآن بإنشاء الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] التالي:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000008C0000006539F73B1A.png" width="112" height="81" style="display:inline-block; margin:4px;width:2.958cm;height:2.138cm;" class="odt-zoomable" data-zoom-src="images/100000000000008C0000006539F73B1A.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000145000000673D89D830.png" width="260" height="82" style="display:inline-block; margin:4px;width:6.877cm;height:2.178cm;" class="odt-zoomable" data-zoom-src="images/1000000000000145000000673D89D830.png" /></td></tr></table>
 
 <table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>id
 </code></pre></div>
-</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">المفتاح الأساسي للجدول — يُستخدم لتعريف الصف بشكل فريد</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>اللقب
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">المفتاح الأساسي للجدول - يُستخدم لتعريف كل صف بشكل فريد</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nom
 </code></pre></div>
-</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">الاسم الأخير للمؤلف</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>الاسم الأول
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">اسم المؤلف</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>prénom
 </code></pre></div>
-</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">الاسم الأول للمؤلف، إن أمكن</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>تاريخ_الميلاد
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">الاسم الأول للمؤلف إن وُجد</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>date_naissance
 </code></pre></div>
-</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">تاريخ الميلاد</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>الجنسية
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">تاريخ ميلاده</div></td></tr><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nationalite
 </code></pre></div>
-</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">بلد المنشأ</div></td></tr></table>
+</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><div style="margin:0 0 0.5em 0">بلده الأصلي</div></td></tr></table>
 
-<p>يمكن أن تكون محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] كما يلي:</p>
-<p><img src="images/10000000000001770000009CA8D7412F.png" width="300" height="125" style="width:7.938cm;height:3.302cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001770000009CA8D7412F.png" /></p>
-<p>لنعد إلى جدول [<bdi dir="ltr" class="odt-ltr-term">BIBLIO</bdi>] ومحتوياته:</p>
+<p>قد يكون محتوى الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] كما يلي:</p>
+<p><img src="images/10000000000001770000009CA8D7412F.png" width="300" height="125" style="width:7.938cm;height:3.298cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001770000009CA8D7412F.png" /></p>
+<p>لنعد إلى الجدول [<bdi dir="ltr" class="odt-ltr-term">BIBLIO</bdi>] ومحتواه:</p>
 <p><img src="images/1000000000000200000000AAB5E71811.png" width="410" height="136" style="width:10.839cm;height:3.598cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000200000000AAB5E71811.png" /></p>
-<p>في عمود [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] بالجدول، لم يعد من الضروري إدخال اسم المؤلف. بدلاً من ذلك، يُفضل إدخال رقم التعريف المخصص له في جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>]. لنقم بإنشاء جدول جديد باسم [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>]. لإنشائه، سنستخدم البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">biblio.sql</bdi>] الذي تم إنشاؤه في القسم<a href="#bibliosql"><u><span style="color: #0563c1"> 3.14.</span></u></a> نقوم بتشغيل هذا البرنامج النصي باستخدام أداة [<bdi dir="ltr" class="odt-ltr-term">Script Executive, Ctrl-F12</bdi>]:</p>
-<p><img src="images/10000000000001CE000000C03DB2BA7D.png" width="370" height="154" style="width:9.779cm;height:4.064cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000C03DB2BA7D.png" /></p>
-<p>نقوم بتعديل البرنامج النصي لإنشاء جدول <bdi dir="ltr" class="odt-ltr-term">BIBLIO</bdi> لتكييفه مع جدول <bdi dir="ltr" class="odt-ltr-term">BOOKS:</bdi></p>
+<p>في العمود [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] من الجدول، لم يعد من الضروري إدراج اسم المؤلف. بل يُفضل بدلاً من ذلك إدراج الرقم (id) الخاص به في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>]. لذا، لنقم بإنشاء جدول جديد باسم [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>]. لإنشائها، سنستخدم البرنامج النصي [<bdi dir="ltr" class="odt-ltr-term">biblio.sql</bdi>] الذي تم إنشاؤه في الفقرة<a href="mqdm-l-l-sql.html#bibliosql"><u><span style="color: #0563c1"> 3.14</span></u></a>. نقوم بتحميل هذا البرنامج النصي باستخدام الأداة [<bdi dir="ltr" class="odt-ltr-term">Script Executive, Ctrl-F12</bdi>]:</p>
+<p><img src="images/10000000000001CE000000C03DB2BA7D.png" width="370" height="153" style="width:9.779cm;height:4.059cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000C03DB2BA7D.png" /></p>
+<p>نقوم بتعديل البرنامج النصي لإنشاء الجدول <bdi dir="ltr" class="odt-ltr-term">BIBLIO</bdi> لتكييفه مع البرنامج النصي الخاص بالجدول <bdi dir="ltr" class="odt-ltr-term">LIVRES:</bdi></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -695,130 +695,130 @@
 <a id="__codelineno-5-23" name="__codelineno-5-23"></a>
 <a id="__codelineno-5-24" name="__codelineno-5-24"></a>
 <a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="cm">/******************************************************************************/</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="cm">/****                          Unique Constraints                          ****/</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="cm">/****                                                     القيود الفريدة ****/</span>
 <a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="cm">/******************************************************************************/</span>
 <a id="__codelineno-5-28" name="__codelineno-5-28"></a>
 <a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">UNQ1_LIVRES</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="p">(</span><span class="n">TITRE</span><span class="p">);</span>
 <a id="__codelineno-5-30" name="__codelineno-5-30"></a>
 <a id="__codelineno-5-31" name="__codelineno-5-31"></a>
 <a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="cm">/******************************************************************************/</span>
-<a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="cm">/****                             Primary Keys                             ****/</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="cm">/****                                                           المفاتيح الأساسية ****/</span>
 <a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="cm">/******************************************************************************/</span>
 <a id="__codelineno-5-35" name="__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">PK_LIVRES</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<p>سنعلق فقط على التغييرات:</p>
+<p>نكتفي بتوضيح التغييرات فقط:</p>
 <ul>
-  <li>السطر 4: يصبح العمود [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] في الجدول عددًا صحيحًا. يشير هذا الرقم إلى أحد المؤلفين في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] الذي تم إنشاؤه مسبقًا.
+  <li>السطر 4: يصبح الحقل [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] في الجدول رقمًا صحيحًا. يشير هذا الرقم إلى أحد مؤلفي الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] الذي تم إنشاؤه مسبقًا.
   </li>
-  <li>الأسطر 11–19: تم استبدال أسماء المؤلفين بمعرفات المؤلفين الخاصة بهم.
+  <li>الأسطر 11-19: تم استبدال أسماء المؤلفين بأرقامهم.
   </li>
-  <li>السطر 29: تم تغيير اسم القيد. كان يُسمى سابقًا [<bdi dir="ltr" class="odt-ltr-term">UNQ1_BIBLIO</bdi>]. وهو يُسمى الآن [<bdi dir="ltr" class="odt-ltr-term">UNQ1_LIVRES</bdi>]. يمكن أن يكون هذا الاسم أي شيء. ومع ذلك، يفضل أن يكون له معنى. هنا، لم يتم بذل هذا الجهد. يجب تمييز القيود المفروضة على الحقول المختلفة والجداول المختلفة داخل قاعدة البيانات بأسماء مختلفة. تذكر أن القيد في السطر 29 يتطلب أن يكون العنوان فريدًا داخل الجدول.
+  <li>السطر 29: تم تغيير اسم القيد. كان يُسمى سابقًا [ <bdi dir="ltr" class="odt-ltr-term">UNQ1_BIBLIO</bdi> ]. ويُسمى الآن [ <bdi dir="ltr" class="odt-ltr-term">UNQ1_LIVRES</bdi> ]. يمكن أن يكون هذا الاسم أي اسم. لكن يُفضل أن يكون له معنى. هنا لم يتم بذل هذا الجهد. يجب تمييز القيود المفروضة على الحقول المختلفة والجداول المختلفة في قاعدة البيانات بأسماء مختلفة. تجدر الإشارة إلى أن القيد الوارد في السطر 29 يشترط أن يكون العنوان فريدًا في الجدول.
   </li>
-  <li>السطر 36: قم بتغيير اسم القيد على المفتاح الأساسي <bdi dir="ltr" class="odt-ltr-term">ID.</bdi>
+  <li>السطر 36: تغيير اسم القيد على المفتاح الأساسي <bdi dir="ltr" class="odt-ltr-term">ID.</bdi>
   </li>
 </ul>
 
-<p>دعونا نقوم بتشغيل هذا البرنامج النصي. إذا نجح، فسنحصل على جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] الجديد التالي:</p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000008500000076777FB9B3.png" width="107" height="95" style="display:inline-block; margin:4px;width:2.819cm;height:2.501cm;" class="odt-zoomable" data-zoom-src="images/100000000000008500000076777FB9B3.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001E5000000ABADDE5D06.png" width="388" height="137" style="display:inline-block; margin:4px;width:10.268cm;height:3.62cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E5000000ABADDE5D06.png" /></td></tr></table>
+<p>لنقم بتنفيذ هذا البرنامج النصي. إذا نجح، فسنحصل على الجدول الجديد [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] التالي:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000008500000076777FB9B3.png" width="107" height="94" style="display:inline-block; margin:4px;width:2.819cm;height:2.498cm;" class="odt-zoomable" data-zoom-src="images/100000000000008500000076777FB9B3.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001E5000000ABADDE5D06.png" width="388" height="137" style="display:inline-block; margin:4px;width:10.268cm;height:3.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E5000000ABADDE5D06.png" /></td></tr></table>
 
-<p>قد يتساءل المرء عما إذا كنا قد حققنا أي مكسب في النهاية. في الواقع، يسرد جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] أرقام المؤلفين بدلاً من أسمائهم. ونظرًا لوجود آلاف المؤلفين، يبدو ربط كتاب بمؤلفه أمرًا صعبًا. لحسن الحظ، فإن لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> موجودة لمساعدتنا. فهي تتيح لنا الاستعلام عن جداول متعددة في نفس الوقت. في هذا المثال، نقدم استعلام <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي يتيح لنا استرداد عناوين الكتب الموجودة في المكتبة، إلى جانب معلومات مؤلفيها. دعونا نستخدم محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>) لتنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالية:</p>
+<p>قد نتساءل عما إذا كنا قد استفدنا من هذا التغيير في النهاية. في الواقع، تعرض الجدولة [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] أرقام المؤلفين بدلاً من أسمائهم. ونظرًا لوجود آلاف المؤلفين، يبدو من الصعب الربط بين كتاب ما ومؤلفه. لحسن الحظ، فإن لغة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> موجودة لمساعدتنا. فهي تتيح لنا الاستعلام عن عدة جداول في آن واحد. على سبيل المثال، نقدم الاستعلام <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي يتيح لنا الحصول على عناوين الكتب الموجودة في المكتبة، مقترنة بمعلومات عن مؤلفيها. لنستخدم محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>) لإصدار الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">date_naissance</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">AUTEURS</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">.</span><span class="n">AUTEUR</span><span class="o">=</span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">ID</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="k">asc</span>
 </code></pre></div>
-<p>من السابق لأوانه شرح استعلام <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> هذا. سنعود إليه بعد قليل. نتيجة هذا الاستعلام هي كما يلي:</p>
-<p><img src="images/1000000000000164000000AA7F9D92F7.png" width="285" height="136" style="width:7.539cm;height:3.6cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000164000000AA7F9D92F7.png" /></p>
-<p>تمت مطابقة كل كتاب بشكل صحيح مع مؤلفه والمعلومات المرتبطة به.</p>
-<p>دعونا نلخص ما قمنا به للتو:</p>
+<p>من المبكر جدًا شرح هذا الأمر <bdi dir="ltr" class="odt-ltr-term">SQL.</bdi> سنعود إلى هذا الموضوع قريبًا. وكانت نتيجة هذا الاستعلام كما يلي:</p>
+<p><img src="images/1000000000000164000000AA7F9D92F7.png" width="285" height="136" style="width:7.539cm;height:3.598cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000164000000AA7F9D92F7.png" /></p>
+<p>تم ربط كل كتاب بشكل صحيح بمؤلفه وبالمعلومات المرتبطة به.</p>
+<p>لنلخص ما قمنا به للتو:</p>
 <ul>
-  <li>لدينا جدولان يحتويان على أنواع مختلفة من المعلومات:
+  <li>لدينا جدولان يجمعان معلومات ذات طبيعة مختلفة:
     <ul>
-      <li>يحتوي جدول <bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi> على معلومات عن المؤلفين
+      <li>تجمع الجدول <bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi> معلومات عن المؤلفين
       </li>
-      <li>يحتوي الجدول <bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi> على معلومات حول الكتب التي اشترتها المكتبة
+      <li>الجدول <bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi> يجمع معلومات عن الكتب التي اشترتها المكتبة
       </li>
     </ul>
   </li>
-  <li>هذه الجداول مرتبطة ببعضها البعض. يجب أن يكون لكل كتاب مؤلف. وقد يكون له عدة مؤلفين. لم يتم تناول هذا السيناريو هنا. يشير الحقل [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] في جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] إلى صف في جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>]. وهذا ما يُسمى <b>بالعلاقة</b>.
+  <li>هذه الجداول مرتبطة ببعضها البعض. لا بد أن يكون لكل كتاب مؤلف. بل قد يكون له عدة مؤلفين. لم يتم أخذ هذه الحالة في الاعتبار هنا. تشير الخانة [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] إلى سطر في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>]. وهذا ما يُسمى <b>بالعلاقة</b>.
   </li>
 </ul>
 
-<p>العلاقة بين جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] وجدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] هي في الواقع نوع من القيود: يجب أن يحتوي كل صف في جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] دائمًا على معرف مؤلف موجود في جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>]. إذا كان أحد الصفوف في [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] يحتوي على معرف مؤلف غير موجود في جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>]، فسنكون في حالة غير طبيعية حيث لن نتمكن من العثور على مؤلف الكتاب.</p>
-<p>نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) قادر على ضمان استيفاء هذا القيد دائمًا. للقيام بذلك، سنضيف قيدًا إلى جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>]:</p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000009E000000EA2C064F16.png" width="126" height="187" style="display:inline-block; margin:4px;width:3.339cm;height:4.944cm;" class="odt-zoomable" data-zoom-src="images/100000000000009E000000EA2C064F16.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000AD0000009065CA70B9.png" width="138" height="115" style="display:inline-block; margin:4px;width:3.658cm;height:3.044cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AD0000009065CA70B9.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000FE000000EB317A31FD.png" width="203" height="188" style="display:inline-block; margin:4px;width:5.378cm;height:4.976cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000000EB317A31FD.png" /></td></tr></table>
+<p>العلاقة التي تربط الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] بالجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] هي في الواقع شكل من أشكال القيود: يجب أن يحتوي كل صف في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] دائمًا على رقم مؤلف موجود في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>]. إذا احتوى أحد السجلات في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] على رقم مؤلف غير موجود في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>]، فسنكون في حالة غير طبيعية حيث لن نتمكن من تحديد مؤلف الكتاب.</p>
+<p>يمكن لجدول <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> التحقق من استمرار استيفاء هذا القيد. ولهذا الغرض، سنقوم بإضافة قيد إلى الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>]:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000009E000000EA2C064F16.png" width="126" height="187" style="display:inline-block; margin:4px;width:3.339cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/100000000000009E000000EA2C064F16.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000AD0000009065CA70B9.png" width="138" height="115" style="display:inline-block; margin:4px;width:3.658cm;height:3.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AD0000009065CA70B9.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000FE000000EB317A31FD.png" width="203" height="188" style="display:inline-block; margin:4px;width:5.378cm;height:4.969cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000000EB317A31FD.png" /></td></tr></table>
 
-<p>يُطلق على الرابط الذي يربط العمود [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] بحقل [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] اسم علاقة <strong>المفتاح الخارجي</strong>. يُطلق على حقل [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] اسم &quot;مفتاح خارجي&quot; في المعالج أعلاه. يعني تعريف مفتاح خارجي أن قيمة العمود [c1] في الجدول [<bdi dir="ltr" class="odt-ltr-term">T1</bdi>] يجب أن توجد في العمود [c2] من الجدول [<bdi dir="ltr" class="odt-ltr-term">T2</bdi>]. يُشار إلى العمود [c1] باسم &quot;المفتاح الخارجي&quot; للجدول <bdi dir="ltr" class="odt-ltr-term">T1</bdi> في العمود [c2] من الجدول [<bdi dir="ltr" class="odt-ltr-term">T2</bdi>]. غالبًا ما يكون العمود [c2] هو المفتاح الأساسي للجدول [<bdi dir="ltr" class="odt-ltr-term">T2</bdi>]، ولكن هذا ليس إلزاميًا.</p>
-<p>نحدد المفتاح الخارجي [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] للجدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] في الحقل [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] للجدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] على النحو التالي:</p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003F9000000C501ADE2AD.png" width="509" height="98" style="display:inline-block; margin:4px;width:13.455cm;height:2.605cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F9000000C501ADE2AD.png" /></td></tr></table>
+<p>يُسمى الرابط الذي يربط السطر [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] بالحقل [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] «رابط <strong>المفتاح الأجنبي</strong>». يُطلق على الحقل [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] اسم «مفتاح خارجي» أو «<bdi dir="ltr" class="odt-ltr-term">foreign key</bdi>» في المساعد أعلاه. تعريف المفتاح الأجنبي يعني أن قيمة العمود [c1] في الجدول [<bdi dir="ltr" class="odt-ltr-term">T1</bdi>] يجب أن تكون موجودة في العمود [c2] في الجدول [<bdi dir="ltr" class="odt-ltr-term">T2</bdi>]. يُطلق على العمود [c1] اسم «المفتاح الأجنبي» للجدول <bdi dir="ltr" class="odt-ltr-term">T1</bdi> بالنسبة للعمود [c2] في الجدول [<bdi dir="ltr" class="odt-ltr-term">T2</bdi>]. غالبًا ما يكون العمود [c2] هو المفتاح الأساسي للجدول [<bdi dir="ltr" class="odt-ltr-term">T2</bdi>]، ولكن هذا ليس إلزاميًا.</p>
+<p>نقوم بتعريف المفتاح الأجنبي [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] من الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] على الحقل [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] من الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] بالطريقة التالية:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003F9000000C501ADE2AD.png" width="509" height="99" style="display:inline-block; margin:4px;width:13.455cm;height:2.607cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F9000000C501ADE2AD.png" /></td></tr></table>
 
 <ol>
-  <li>اسم القيد: <bdi dir="ltr" class="odt-ltr-term">free</bdi>
+  <li>اسم القيد: حر
   </li>
-  <li>عمود &quot;المفتاح الأجنبي&quot;، وهو هنا عمود [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>]
+  <li>عمود «المفتاح الأجنبي»، وهو هنا العمود [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>]
   </li>
-  <li>الجدول المشار إليه بواسطة المفتاح الخارجي. هنا، يجب أن يكون لعمود [<bdi dir="ltr" class="odt-ltr-term">AUTHOR</bdi>] في جدول [<bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi>] قيمة في عمود [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>]. لذلك، فإن جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>] هو الجدول المشار إليه.
+  <li>الجدول المشار إليه بواسطة المفتاح الأجنبي. هنا، يجب أن يكون للعمود [<bdi dir="ltr" class="odt-ltr-term">AUTEUR</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi>] قيمة في العمود [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>]. وبالتالي، فإن الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>] هو الذي يتم الإشارة إليه.
   </li>
-  <li>العمود المشار إليه بواسطة المفتاح الخارجي. هنا، العمود [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في جدول [<bdi dir="ltr" class="odt-ltr-term">AUTHORS</bdi>].
+  <li>العمود المشار إليه بواسطة المفتاح الأجنبي. وهنا العمود [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">AUTEURS</bdi>].
   </li>
 </ol>
 
 <p>نقوم بالتحقق من صحة هذا القيد:</p>
-<p><img src="images/10000000000001E900000095302F1B8B.png" width="391" height="119" style="width:10.349cm;height:3.154cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E900000095302F1B8B.png" /></p>
+<p><img src="images/10000000000001E900000095302F1B8B.png" width="391" height="119" style="width:10.349cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E900000095302F1B8B.png" /></p>
 <p>إذا سارت الأمور على ما يرام، فسيتم قبولها:</p>
-<p><img src="images/10000000000001EE0000010B27B969F6.png" width="395" height="214" style="width:10.458cm;height:5.652cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE0000010B27B969F6.png" /></p>
-<p>ما هي نتيجة هذا القيد الجديد للمفتاح الخارجي؟ باستخدام محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>)، دعونا نحاول إدراج صف في جدول <bdi dir="ltr" class="odt-ltr-term">BOOKS</bdi> بمعرف مؤلف غير موجود:</p>
-<p><img src="images/10000000000001E2000000C16CA79B35.png" width="385" height="154" style="width:10.199cm;height:4.083cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000000C16CA79B35.png" /></p>
-<p>حاولت عملية [<bdi dir="ltr" class="odt-ltr-term">INSERT</bdi>] أعلاه إدراج كتاب بمعرف مؤلف غير موجود (100). فشل تنفيذ الاستعلام. تشير رسالة الخطأ المرتبطة إلى وجود انتهاك لقيود المفتاح الخارجي &quot;<bdi dir="ltr" class="odt-ltr-term">FK</bdi>_BOOKS_AUTHORS&quot;. هذا هو ما حددناه للتو.</p>
-<h2 id="52">5.2. <span style="color: #4f81bd">عمليات الانضمام بين جدولين</span></h2>
-<p>لا نزال في قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">DBBIBLIO</bdi>] (أو أي قاعدة بيانات أخرى)، فلنقم بإنشاء جدولين اختباريين باسم <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB</bdi> ونحددهما على النحو التالي:</p>
+<p><img src="images/10000000000001EE0000010B27B969F6.png" width="395" height="213" style="width:10.458cm;height:5.648cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE0000010B27B969F6.png" /></p>
+<p>ما هي نتيجة هذا القيد الجديد للمفتاح الأجنبي؟ باستخدام محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>)، دعونا نحاول إدراج صف في الجدول <bdi dir="ltr" class="odt-ltr-term">LIVRES</bdi> برقم مؤلف غير موجود:</p>
+<p><img src="images/10000000000001E2000000C16CA79B35.png" width="385" height="155" style="width:10.199cm;height:4.089cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000000C16CA79B35.png" /></p>
+<p>حاولت العملية [<bdi dir="ltr" class="odt-ltr-term">INSERT</bdi>] المذكورة أعلاه إدراج كتاب برقم مؤلف (100) غير موجود. فشل تنفيذ الاستعلام. تشير رسالة الخطأ المرتبطة بذلك إلى حدوث انتهاك لقيود المفتاح الأجنبي &quot;<bdi dir="ltr" class="odt-ltr-term">FK</bdi>_LIVRES_AUTEURS&quot;. وهي القيد الذي قمنا بتعريفه للتو.</p>
+<h2 id="52">5.2. <span style="color: #4f81bd">عمليات الربط بين جدولين</span></h2>
+<p>في قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">DBBIBLIO</bdi>] (أو أي قاعدة بيانات أخرى)، لنقم بإنشاء جدولين تجريبيين باسم <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB</bdi> ونحددهما على النحو التالي:</p>
 <p><strong>الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi></strong></p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000012E00000034EE43AFB1.png" width="241" height="42" style="display:inline-block; margin:4px;width:6.389cm;height:1.101cm;" class="odt-zoomable" data-zoom-src="images/100000000000012E00000034EE43AFB1.png" /><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي للجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi></div><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">DATA:</bdi> بيانات عشوائية</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000005600000046ADC07D03.png" width="69" height="56" style="display:inline-block; margin:4px;width:1.819cm;height:1.482cm;" class="odt-zoomable" data-zoom-src="images/100000000000005600000046ADC07D03.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000012E00000034EE43AFB1.png" width="241" height="42" style="display:inline-block; margin:4px;width:6.389cm;height:1.099cm;" class="odt-zoomable" data-zoom-src="images/100000000000012E00000034EE43AFB1.png" /><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي للجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi></div><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">DATA:</bdi> أي بيانات</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000005600000046ADC07D03.png" width="69" height="56" style="display:inline-block; margin:4px;width:1.819cm;height:1.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000005600000046ADC07D03.png" /></td></tr></table>
 
 <p><strong>الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi></strong></p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000014000000045D0BD93DD.png" width="256" height="55" style="display:inline-block; margin:4px;width:6.768cm;height:1.459cm;" class="odt-zoomable" data-zoom-src="images/100000000000014000000045D0BD93DD.png" /><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي لجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi></div><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">IDTA:</bdi> المفتاح الخارجي لجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> الذي يشير إلى عمود <bdi dir="ltr" class="odt-ltr-term">ID</bdi> في جدول <bdi dir="ltr" class="odt-ltr-term">TA.</bdi> وبالتالي، يجب أن توجد قيمة من عمود <bdi dir="ltr" class="odt-ltr-term">IDTA</bdi> في جدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> في عمود <bdi dir="ltr" class="odt-ltr-term">ID</bdi> في جدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi></div><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">VALUE:</bdi> أي بيانات</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000A000000045234CFE2D.png" width="128" height="55" style="display:inline-block; margin:4px;width:3.388cm;height:1.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A000000045234CFE2D.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000014000000045D0BD93DD.png" width="256" height="55" style="display:inline-block; margin:4px;width:6.768cm;height:1.459cm;" class="odt-zoomable" data-zoom-src="images/100000000000014000000045D0BD93DD.png" /><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي للجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi></div><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">IDTA:</bdi> المفتاح الأجنبي للجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> الذي يشير إلى العمود <bdi dir="ltr" class="odt-ltr-term">ID</bdi> في الجدول <bdi dir="ltr" class="odt-ltr-term">TA.</bdi> وبالتالي، يجب أن توجد قيمة من العمود <bdi dir="ltr" class="odt-ltr-term">IDTA</bdi> في الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> في العمود <bdi dir="ltr" class="odt-ltr-term">ID</bdi> في الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi></div><div style="margin:0 0 0.5em 0">- <bdi dir="ltr" class="odt-ltr-term">VALEUR:</bdi> أي قيمة</div></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000A000000045234CFE2D.png" width="128" height="55" style="display:inline-block; margin:4px;width:3.388cm;height:1.459cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A000000045234CFE2D.png" /></td></tr></table>
 
-<p>في محرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>)، سنقوم بتنفيذ عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي تستخدم في آن واحد كل من الجدولين <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB.</bdi></p>
+<p>في المحرر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> (<bdi dir="ltr" class="odt-ltr-term">F12</bdi>)، سنصدر أوامر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> تستغل في آن واحد الجدولين <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB.</bdi></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">TA</span><span class="p">,</span><span class="w">  </span><span class="n">TB</span>
 </code></pre></div>
 <p><img src="images/10000000000000F2000000ADA94486D3.png" width="193" height="138" style="width:5.119cm;height:3.658cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000F2000000ADA94486D3.png" /></p>
-<p>يستخدم جملة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الكلمة الرئيسية <bdi dir="ltr" class="odt-ltr-term">FROM</bdi> للإشارة إلى كل من الجدولين <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> ستؤدي عملية <bdi dir="ltr" class="odt-ltr-term">FROM TA, TB</bdi> إلى إنشاء جدول مؤقت جديد، حيث سيتم ربط كل صف من جدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> بكل صف من جدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> وبالتالي، إذا كان جدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> يحتوي على <bdi dir="ltr" class="odt-ltr-term">NA</bdi> صفوفًا وجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> يحتوي على <bdi dir="ltr" class="odt-ltr-term">NB</bdi> صفوفًا، فسيحتوي الجدول الناتج على <bdi dir="ltr" class="odt-ltr-term">NA × NB</bdi> صفوفًا. يظهر هذا في لقطة الشاشة أعلاه. علاوة على ذلك، يحتوي كل صف على الأعمدة من كلا الجدولين. تشير الأعمدة المحددة بالترتيب [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> <em><bdi dir="ltr" class="odt-ltr-term">col1</bdi></em>, <em><bdi dir="ltr" class="odt-ltr-term">col2</bdi></em>, ... <bdi dir="ltr" class="odt-ltr-term">FROM</bdi> ...] إلى الأعمدة المطلوب تضمينها. هنا، تشير الكلمة الرئيسية * إلى طلب جميع أعمدة الجدول الناتج. يُشار أحيانًا إلى الجدول الناتج عن عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> السابقة باسم <strong>المنتج الديكارتي</strong> للجدولين <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB.</bdi></p>
-<p>أعلاه، تم ربط كل صف من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> بكل صف من الجدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> بشكل عام، نريد ربط صف من <bdi dir="ltr" class="odt-ltr-term">TB</bdi> بصف من <bdi dir="ltr" class="odt-ltr-term">TA</bdi> له <strong>علاقة</strong> به. غالبًا ما تأخذ هذه العلاقة شكل قيد مفتاح خارجي. وهذا هو الحال هنا. بالنسبة لصف في الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi>، يمكننا ربط الصفوف في الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> التي تستوفي العلاقة <bdi dir="ltr" class="odt-ltr-term">TB.IDTA</bdi>=<bdi dir="ltr" class="odt-ltr-term">TA.ID.</bdi> هناك عدة طرق للاستعلام عن هذا:</p>
+<p>يستخدم الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>، بعد الكلمة الرئيسية <bdi dir="ltr" class="odt-ltr-term">FROM</bdi>، الجدولين <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> ستؤدي العملية <bdi dir="ltr" class="odt-ltr-term">FROM TA</bdi>، <bdi dir="ltr" class="odt-ltr-term">TB</bdi> ستؤدي إلى إنشاء جدول مؤقت جديد يتم فيه ربط كل سطر من جدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> بكل سطر من جدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> وبالتالي، إذا كانت الجدولة <bdi dir="ltr" class="odt-ltr-term">TA</bdi> تحتوي على <bdi dir="ltr" class="odt-ltr-term">NA</bdi> صفًا، والجدولة <bdi dir="ltr" class="odt-ltr-term">TB</bdi> تحتوي على <bdi dir="ltr" class="odt-ltr-term">NB</bdi> صفًا، فإن الجدول الناتج سيحتوي على <bdi dir="ltr" class="odt-ltr-term">NA × NB</bdi> صفًا. وهذا ما توضحه لقطة الشاشة أعلاه. علاوة على ذلك، يحتوي كل صف على أعمدة الجدولين. الأعمدة <em><bdi dir="ltr" class="odt-ltr-term">coli</bdi></em> المحددة بالترتيب [<bdi dir="ltr" class="odt-ltr-term">SELECT col1, col2</bdi>, ... <bdi dir="ltr" class="odt-ltr-term">FROM</bdi> ...] تشير إلى الأعمدة التي يجب الاحتفاظ بها. هنا تشير الكلمة الرئيسية * إلى أنه يتم طلب جميع أعمدة الجدول الناتج. يُقال أحيانًا إن الجدول الناتج عن الأمر السابق <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> هو <strong>حاصل الضرب الديكارتي</strong> للجدولين <bdi dir="ltr" class="odt-ltr-term">TA</bdi> و <bdi dir="ltr" class="odt-ltr-term">TB.</bdi></p>
+<p>فيما سبق، تم ربط كل صف من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> بكل صف من الجدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> بشكل عام، نرغب في ربط كل سطر من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> بالسطور ذات <strong>الصلة</strong> به في الجدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> وغالبًا ما تتخذ هذه العلاقة شكل قيد مفتاح أجنبي. وهذا هو الحال هنا. يمكن ربط صف من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> بالصفوف الموجودة في الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> التي تستوفي العلاقة <bdi dir="ltr" class="odt-ltr-term">TB.IDTA</bdi>=<bdi dir="ltr" class="odt-ltr-term">TA.ID.</bdi> وهناك عدة طرق لطلب ذلك:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TA</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span>
 </code></pre></div>
-<p>تشبه عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> السابقة العبارة السابقة، مع اختلافين:</p>
+<p>الأمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> السابق مشابه للأمر السابق مع وجود اختلافين:</p>
 <ul>
-  <li>يتم تصفية صفوف نتائج المنتج الديكارتي <bdi dir="ltr" class="odt-ltr-term">TA x TB</bdi> بواسطة جملة <bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> التي تربط بصف في الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> فقط تلك الصفوف في الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> التي تستوفي العلاقة <bdi dir="ltr" class="odt-ltr-term">TB.IDTA</bdi>=<bdi dir="ltr" class="odt-ltr-term">TA.ID</bdi>
+  <li>يتم تصفية الصفوف الناتجة عن الضرب الديكارتي <bdi dir="ltr" class="odt-ltr-term">TA × TB</bdi> بواسطة جملة <bdi dir="ltr" class="odt-ltr-term">WHERE</bdi> التي تربط صفًا من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi>، الصفوف الوحيدة في الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> التي تستوفي العلاقة <bdi dir="ltr" class="odt-ltr-term">TB.IDTA</bdi>=<bdi dir="ltr" class="odt-ltr-term">TA.ID</bdi>
   </li>
-  <li>يتم طلب أعمدة معينة فقط باستخدام صيغة [<bdi dir="ltr" class="odt-ltr-term">T.col</bdi>]، حيث <bdi dir="ltr" class="odt-ltr-term">T</bdi> هو اسم الجدول و col هو اسم العمود في ذلك الجدول. تعمل هذه الصيغة على حل أي غموض قد ينشأ في حالة وجود أعمدة تحمل نفس الاسم في جدولين. وعندما لا يوجد هذا الغموض، يمكن استخدام صيغة [col] دون تحديد الجدول الخاص بهذا العمود.
+  <li>يتم طلب أعمدة معينة فقط باستخدام الصيغة [<bdi dir="ltr" class="odt-ltr-term">T.col</bdi>] حيث <bdi dir="ltr" class="odt-ltr-term">T</bdi> هو اسم الجدول و col هو اسم عمود في هذا الجدول. تسمح هذه الصيغة بإزالة الغموض الذي قد ينشأ في حالة وجود أعمدة تحمل نفس الاسم في جدولين مختلفين. وعندما لا يوجد هذا الغموض، يمكن استخدام صيغة [col] دون تحديد الجدول الذي ينتمي إليه هذا العمود.
   </li>
 </ul>
 
-<p>والنتيجة هي كما يلي:</p>
-<p><img src="images/10000000000000CA000000467C36DE6B.png" width="162" height="56" style="width:4.277cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA000000467C36DE6B.png" /></p>
-<p>يمكن الحصول على نفس النتيجة باستخدام عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالية:</p>
+<p>والنتيجة التي يتم الحصول عليها هي كما يلي:</p>
+<p><img src="images/10000000000000CA000000467C36DE6B.png" width="162" height="56" style="width:4.277cm;height:1.478cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA000000467C36DE6B.png" /></p>
+<p>ويمكن الحصول على النتيجة نفسها باستخدام الأمر التالي: <bdi dir="ltr" class="odt-ltr-term">SQL:</bdi></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">TB</span><span class="p">.</span><span class="n">idta</span>
 </code></pre></div>
-<p>يُشير مصطلح [<bdi dir="ltr" class="odt-ltr-term">inner join</bdi>] إلى اسم &quot;<bdi dir="ltr" class="odt-ltr-term">inner join</bdi>&quot; الذي يُطلق على هذا النوع من العمليات بين جدولين. وسنرى أن هناك أيضًا ما يُسمى &quot;<bdi dir="ltr" class="odt-ltr-term">outer join</bdi>&quot;. في عملية <bdi dir="ltr" class="odt-ltr-term">inner join</bdi>، لا يؤثر ترتيب الجداول في الاستعلام على النتيجة: <strong>فـ <bdi dir="ltr" class="odt-ltr-term">FROM TA inner join TB</bdi></strong> تعادل <strong><bdi dir="ltr" class="odt-ltr-term">FROM TB inner join TA</bdi></strong>.</p>
-<p>يتضمن ترتيب <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> السابق في مجموعة النتائج فقط تلك الصفوف من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> التي تمت الإشارة إليها بواسطة صف واحد على الأقل من الجدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> وبالتالي، لا يظهر الصف [3, <bdi dir="ltr" class="odt-ltr-term">data3</bdi>] في <bdi dir="ltr" class="odt-ltr-term">TA</bdi> في النتيجة لأنه لم تتم الإشارة إليه بواسطة صف في <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> قد ترغب في الحصول على جميع الصفوف من <bdi dir="ltr" class="odt-ltr-term">TA</bdi>، سواء تمت الإشارة إليها بواسطة صف في <bdi dir="ltr" class="odt-ltr-term">TB</bdi> أم لا. في هذه الحالة، تستخدم <strong>انضمام خارجي أيسر</strong> بين الجدولين:</p>
+<p>يُشتق مصطلح «الربط الداخلي» من العبارة [<bdi dir="ltr" class="odt-ltr-term">inner join</bdi>]، وهو الاسم الذي يُطلق على هذا النوع من العمليات بين جدولين. وسنرى لاحقًا أن هناك ما يُسمى «الربط الخارجي». في الربط الداخلي، لا يؤثر ترتيب الجداول في الاستعلام على النتيجة: <strong><bdi dir="ltr" class="odt-ltr-term">FROM TA inner join TB</bdi></strong> يعادل <strong><bdi dir="ltr" class="odt-ltr-term">FROM TB inner join TA</bdi></strong>.</p>
+<p>الأمر السابق <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لا يضع في الجدول الناتج سوى الصفوف من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> التي تشير إليها صف واحد على الأقل من الجدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> وبالتالي، فإن السطر <bdi dir="ltr" class="odt-ltr-term">TA</bdi> في الجدول [3, <bdi dir="ltr" class="odt-ltr-term">data3</bdi>] لا يظهر في النتيجة لأنه غير مشار إليه بواسطة أي سطر في الجدول <bdi dir="ltr" class="odt-ltr-term">TB.</bdi> قد نرغب في الحصول على جميع السطور من الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi>، سواء تمت الإشارة إليها من قبل سطر في الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> أم لا. في هذه الحالة، نستخدم <strong>ربطًا خارجيًا</strong> بين الجدولين:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span>
 </code></pre></div>
-<p><img src="images/10000000000000CA0000005831DE623C.png" width="162" height="70" style="width:4.277cm;height:1.863cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA0000005831DE623C.png" /></p>
-<p>لدينا هنا <strong>ربط خارجي أيسر</strong>. لفهم مصطلح &quot;<bdi dir="ltr" class="odt-ltr-term">FROM TA left outer join TB</bdi>&quot;، تخيل ربطًا مع الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> على اليسار والجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> على اليمين. تظهر جميع الصفوف من الجدول الأيسر في نتيجة الربط الخارجي الأيسر، حتى تلك التي لا تستوفي شرط الربط. لا يمثل شرط الربط هذا بالضرورة قيدًا للمفتاح الخارجي، على الرغم من أن هذه هي الحالة الأكثر شيوعًا.</p>
+<p><img src="images/10000000000000CA0000005831DE623C.png" width="162" height="70" style="width:4.277cm;height:1.857cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA0000005831DE623C.png" /></p>
+<p>لدينا هنا عملية ربط خارجي يساري &quot;<strong><bdi dir="ltr" class="odt-ltr-term">left outer join</bdi></strong>&quot;. لفهم المصطلح &quot;<bdi dir="ltr" class="odt-ltr-term">FROM TA left outer join TB</bdi>&quot;، علينا أن نتخيل عملية ربط تضع الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> على اليسار والجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> على اليمين. تظهر جميع الصفوف الموجودة في الجدول الأيسر في نتيجة عملية الربط الخارجي الأيسر، حتى تلك التي لم يتم التحقق من علاقة الربط الخاصة بها. ولا تشكل علاقة الربط هذه بالضرورة قيدًا للمفتاح الأجنبي، على الرغم من أن هذا هو الحال الأكثر شيوعًا.</p>
 <p>بالترتيب التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span>
 </code></pre></div>
-<p>يوجد جدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> على الجانب &quot;الأيسر&quot; من الارتباط الخارجي. لذلك، ستظهر جميع الصفوف من <bdi dir="ltr" class="odt-ltr-term">TB</bdi> في النتيجة:</p>
+<p>تكون الجدولة <bdi dir="ltr" class="odt-ltr-term">TB</bdi> هي «اليسار» في عملية الربط الخارجي. وبالتالي، ستظهر جميع السطور من <bdi dir="ltr" class="odt-ltr-term">TB</bdi> في النتيجة:</p>
 <p><img src="images/10000000000000C9000000461F95A28D.png" width="161" height="56" style="width:4.247cm;height:1.478cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C9000000461F95A28D.png" /></p>
-<p>على عكس عملية «الربط الداخلي»، فإن ترتيب الجداول مهم هنا. وهناك أيضًا عمليات «الربط الخارجي الأيمن»:</p>
+<p>وعلى عكس الانضمام الداخلي، فإن ترتيب الجداول له أهمية هنا. كما توجد أيضًا عمليات انضمام خارجي يمين:</p>
 <ul>
-  <li><bdi dir="ltr" class="odt-ltr-term">FROM TA LEFT OUTER JOIN TB</bdi> يعادل <bdi dir="ltr" class="odt-ltr-term">FROM TB RIGHT OUTER JOIN TA:</bdi> جدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> موجود على اليسار
+  <li><bdi dir="ltr" class="odt-ltr-term">FROM TA left outer join TB</bdi> تعادل <bdi dir="ltr" class="odt-ltr-term">FROM TB right outer join TA:</bdi> الجدول <bdi dir="ltr" class="odt-ltr-term">TA</bdi> يقع على اليسار
   </li>
-  <li><bdi dir="ltr" class="odt-ltr-term">FROM TB LEFT OUTER JOIN TA</bdi> يعادل <bdi dir="ltr" class="odt-ltr-term">FROM TA RIGHT OUTER JOIN TB:</bdi> الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> موجود على اليسار
+  <li><bdi dir="ltr" class="odt-ltr-term">FROM TB</bdi> الارتباط الخارجي الأيسر مع <bdi dir="ltr" class="odt-ltr-term">TA</bdi> يعادل <bdi dir="ltr" class="odt-ltr-term">FROM TA</bdi> الارتباط الخارجي الأيمن مع <bdi dir="ltr" class="odt-ltr-term">TB:</bdi> الجدول <bdi dir="ltr" class="odt-ltr-term">TB</bdi> يقع على اليسار
   </li>
 </ul>
 
-<p>الآن بعد أن فهمنا أساسيات الاستعلام عن جداول متعددة في وقت واحد، يمكننا الانتقال إلى استعلامات قواعد البيانات الأكثر تعقيدًا.</p>
+<p>وبما أننا أصبحنا الآن على دراية بأساسيات الاستخدام المتزامن لعدة جداول، يمكننا الآن تناول عمليات الاستعلام الأكثر تعقيدًا في قواعد البيانات.</p>
 
 
 
