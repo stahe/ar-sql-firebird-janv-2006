@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // --- BiDi document metadata (V907) ---
-  var ODT_BIDI_ENABLED = __BIDI_ENABLED__;
-  var ODT_BIDI_DIR = "__BIDI_DIR__";
-  var ODT_BIDI_LANG = "__BIDI_LANG__";
+  var ODT_BIDI_ENABLED = true;
+  var ODT_BIDI_DIR = "rtl";
+  var ODT_BIDI_LANG = "ar";
   if (ODT_BIDI_ENABLED) {
     if (ODT_BIDI_DIR) document.documentElement.setAttribute("dir", ODT_BIDI_DIR);
     if (ODT_BIDI_LANG) document.documentElement.setAttribute("lang", ODT_BIDI_LANG);
